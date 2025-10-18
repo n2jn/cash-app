@@ -1,0 +1,25 @@
+{
+  "name": "cash-app-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:next": "npm run dev --workspace=apps/next",
+    "dev:mobile": "npm run dev --workspace=apps/mobile",
+    "build:next": "npm run build --workspace=apps/next",
+    "build:mobile": "npm run build --workspace=apps/mobile",
+    "lint": "eslint .",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "clean": "rm -rf node_modules"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.0.0"
+  }
+}
