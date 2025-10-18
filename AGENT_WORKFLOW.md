@@ -8,20 +8,29 @@ This document explains how to use the specialized agents in this project to buil
 **Agent**: `product-manager`
 - Analyzes requirements
 - Creates structured tickets
-- Breaks down work for developers
+- Coordinates the team
 - Maintains task tracking
+
+### 💎 Fullstack Expert (NEW!)
+**Agent**: `fullstack-expert`
+- Creates shared UI in `packages/app/`
+- Builds cross-platform screens and components
+- Handles business logic and providers
+- Features work on both mobile AND web
 
 ### 📱 Expo Expert
 **Agent**: `expo-expert`
-- Implements mobile features (apps/mobile/)
-- Expert in React Native + Expo
-- Handles iOS and Android
+- Configures mobile platform (apps/mobile/)
+- Integrates shared code from `packages/app/`
+- Handles mobile-only features (camera, GPS, etc.)
+- Optimizes for iOS and Android
 
 ### 🌐 Next.js Expert
 **Agent**: `nextjs-expert`
-- Implements web features (apps/next/)
-- Expert in Next.js 14 + React
-- Handles SSR, SEO, performance
+- Configures web platform (apps/next/)
+- Integrates shared code from `packages/app/`
+- Handles web-only features (SEO, SSR, etc.)
+- Optimizes for browsers
 
 ## How to Use the Agents
 
@@ -46,7 +55,7 @@ Simply describe what you want in natural language:
 I'll automatically launch the **product-manager** agent who will:
 - Analyze your request
 - Create a ticket in `tickets/FEATURE-XXX.md`
-- Break down into mobile and web tasks
+- Break down into shared, mobile, and web tasks
 - Update `tasks.json`
 
 Example response:
@@ -55,26 +64,30 @@ Created FEATURE-001: User Authentication System
 
 Platform: Both (Mobile + Web)
 Tasks created:
-- 3 mobile tasks → assigned to expo-expert
-- 3 web tasks → assigned to nextjs-expert
-- 1 shared task → API contracts
+- 3 shared tasks → assigned to fullstack-expert
+- 2 mobile integration tasks → assigned to expo-expert
+- 2 web integration tasks → assigned to nextjs-expert
 
 See: tickets/FEATURE-001.md
 ```
 
 ### 3️⃣ Developers Implement
 
-I'll launch the appropriate expert agents in parallel:
+I'll launch the agents in the right order:
 
-**For mobile work:**
-- Launch **expo-expert** agent
-- Reads ticket and implements in `apps/mobile/`
-- Updates task status
+**Step 1: Shared Code (runs first)**
+- Launch **fullstack-expert** agent
+- Creates screens and components in `packages/app/`
+- Builds cross-platform features
 
-**For web work:**
-- Launch **nextjs-expert** agent
-- Reads ticket and implements in `apps/next/`
-- Updates task status
+**Step 2: Platform Integration (runs after shared code)**
+- Launch **expo-expert** agent (parallel)
+  - Integrates shared code into `apps/mobile/`
+  - Configures Expo settings
+
+- Launch **nextjs-expert** agent (parallel)
+  - Integrates shared code into `apps/next/`
+  - Configures Next.js settings
 
 ### 4️⃣ Review and Iterate
 
@@ -94,37 +107,66 @@ You can then:
 ### Simple Feature (Single Platform)
 
 ```
-You: "Add a dark mode toggle to the mobile app"
+You: "Add push notifications to the mobile app"
 
 Me:
 1. Launch product-manager
    → Creates FEATURE-002.md (Mobile only)
 
 2. Launch expo-expert
-   → Implements dark mode in apps/mobile/
+   → Configures expo-notifications
+   → Implements handlers
 
 3. Report completion
 ```
 
-### Complex Feature (Cross-Platform)
+### Cross-Platform Feature (Most Common)
 
 ```
-You: "Build a payment flow for both apps"
+You: "Build a user profile screen for both apps"
 
 Me:
 1. Launch product-manager
    → Creates FEATURE-003.md
-   → Breaks into 5 mobile tasks + 5 web tasks
+   → Breaks into: 2 shared tasks, 1 mobile task, 1 web task
 
-2. Launch expo-expert (parallel)
-   → Implements mobile payment UI
-   → Integrates payment SDK
+2. Launch fullstack-expert
+   → Creates ProfileScreen in packages/app/
+   → Creates ProfileProvider
+   → Builds cross-platform UI
 
-3. Launch nextjs-expert (parallel)
-   → Implements web payment pages
-   → Creates API routes
+3. Launch expo-expert + nextjs-expert (parallel)
+   → expo-expert: Integrates ProfileScreen in apps/mobile/
+   → nextjs-expert: Integrates ProfileScreen in apps/next/
+   → Both configure routing
 
-4. Coordinate shared types and contracts
+4. Report completion
+```
+
+### Complex Feature
+
+```
+You: "Build a payment flow with mobile camera scanning and web stripe checkout"
+
+Me:
+1. Launch product-manager
+   → Creates FEATURE-004.md
+   → Shared: Payment UI, validation
+   → Mobile: Camera scanning
+   → Web: Stripe integration
+
+2. Launch fullstack-expert
+   → Creates PaymentScreen (shared UI)
+   → Creates payment validation logic
+
+3. Launch expo-expert
+   → Integrates PaymentScreen
+   → Adds camera scanning feature
+
+4. Launch nextjs-expert
+   → Integrates PaymentScreen
+   → Adds Stripe checkout
+
 5. Report completion
 ```
 
@@ -176,17 +218,24 @@ cash-app/
 ├── .claude/
 │   └── agents/
 │       ├── product-manager.md     # PM agent
-│       ├── expo-expert.md         # Mobile dev
-│       └── nextjs-expert.md       # Web dev
+│       ├── fullstack-expert.md    # Shared code dev
+│       ├── expo-expert.md         # Mobile platform
+│       └── nextjs-expert.md       # Web platform
+├── packages/
+│   └── app/                       # ⭐ SHARED CODE
+│       ├── features/              # Feature modules
+│       ├── components/            # Shared components
+│       ├── provider/              # Providers
+│       ├── hooks/                 # Hooks
+│       └── types/                 # Types
+├── apps/
+│   ├── mobile/                    # Expo (integrates shared code)
+│   └── next/                      # Next.js (integrates shared code)
 ├── tickets/
 │   ├── README.md                  # Ticket system docs
 │   ├── .template.md               # Ticket template
-│   ├── FEATURE-001.md            # Feature tickets
-│   └── BUG-001.md                # Bug tickets
-├── tasks.json                     # Task tracking
-└── apps/
-    ├── mobile/                    # Expo app
-    └── next/                      # Next.js app
+│   └── FEATURE-001.md            # Feature tickets
+└── tasks.json                     # Task tracking
 ```
 
 ## Task Tracking
@@ -242,14 +291,42 @@ cat tickets/*.md
 cat tasks.json
 ```
 
+## Architecture Benefits
+
+### Why This Structure?
+
+**Before (❌ Duplicate Code)**:
+```
+apps/mobile/screens/LoginScreen.tsx    # React Native version
+apps/next/app/login/page.tsx           # Next.js version
+// Duplicate code, double maintenance!
+```
+
+**After (✅ Shared Code)**:
+```
+packages/app/features/auth/screens/LoginScreen.tsx  # ONE implementation
+apps/mobile/app/(auth)/login.tsx        // Import and use
+apps/next/app/(auth)/login/page.tsx     // Import and use
+// Write once, use everywhere!
+```
+
+### Division of Labor
+
+| Agent | Responsibility | Output |
+|-------|---------------|--------|
+| **fullstack-expert** | Shared UI & logic | `packages/app/` |
+| **expo-expert** | Mobile config | `apps/mobile/` |
+| **nextjs-expert** | Web config | `apps/next/` |
+
 ## Workflow Summary
 
 1. **You**: Describe feature in natural language
-2. **Product Manager**: Creates structured tickets
-3. **Developers**: Implement in parallel
-4. **You**: Review, iterate, approve
+2. **Product Manager**: Creates structured tickets with task breakdown
+3. **Fullstack Expert**: Builds shared code (if cross-platform)
+4. **Platform Experts**: Integrate and configure (in parallel)
+5. **You**: Review, iterate, approve
 
-This gives you a full "virtual team" working on your monorepo! 🚀
+This gives you a full "virtual team" with zero code duplication! 🚀
 
 ## Questions?
 
