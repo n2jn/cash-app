@@ -83,20 +83,27 @@ packages/app/
 
 **Always use components from the UI library first:**
 
+The `@cash-app/ui` package is built on **Gluestack UI**, providing 30+ pre-built components with Tailwind styling.
+
 ```typescript
-// ✅ Good: Use existing UI components
-import { Button, Card, Input } from '@cash-app/ui'
-import { View } from 'react-native'
+// ✅ Good: Use existing UI components (Gluestack-based)
+import { Button, ButtonText, Card, Input, InputField, Box } from '@cash-app/ui'
 
 export const LoginScreen = () => {
   return (
-    <View>
+    <Box className="p-4">
       <Card>
-        <Input placeholder="Email" />
-        <Input placeholder="Password" secureTextEntry />
-        <Button title="Login" onPress={() => {}} />
+        <Input className="mb-4">
+          <InputField placeholder="Email" />
+        </Input>
+        <Input className="mb-4">
+          <InputField placeholder="Password" secureTextEntry />
+        </Input>
+        <Button onPress={() => {}}>
+          <ButtonText>Login</ButtonText>
+        </Button>
       </Card>
-    </View>
+    </Box>
   )
 }
 
@@ -115,13 +122,20 @@ export const LoginScreen = () => {
 **When to request new UI components:**
 
 If you need a component that doesn't exist in `@cash-app/ui`:
-1. Check if it's generic enough for the UI library
-2. If yes, request ui-expert to create it
-3. If no (feature-specific), create it in your feature folder
+1. **Check Gluestack first**: The UI library is built on Gluestack UI - check if Gluestack provides it
+2. **Generic component**: If it's generic (button, input, modal), request ui-expert to add it
+3. **Feature-specific**: If it's feature-specific (LoginForm, TransactionList), create it in your feature folder
 
 ```typescript
-// Generic → Request from ui-expert
-// - Button, Input, Card, Modal, etc.
+// Available from @cash-app/ui (Gluestack components):
+// - Button, Input, Textarea, Checkbox, Radio, Switch, Select
+// - Box, HStack, VStack, Center, Divider
+// - Text, Heading, Avatar, Badge
+// - Modal, Alert, Toast, Popover, Tooltip, Menu
+// - And more: https://gluestack.io/ui/docs/components/all-components
+
+// Generic (not in Gluestack) → Request from ui-expert
+// - Custom Card variants, FormField, etc.
 
 // Feature-specific → Create in packages/app/
 // - LoginForm, TransactionList, ProfileHeader, etc.
