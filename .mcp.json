@@ -3,6 +3,14 @@
     "figma-remote-mcp": {
       "type": "http",
       "url": "https://mcp.figma.com/mcp"
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/n2jn/Documents/projects/cash-app"
+      ]
     }
   }
 }
