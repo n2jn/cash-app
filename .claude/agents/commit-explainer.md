@@ -126,7 +126,13 @@ After updating agent files:
 
 ### Step 6: Execute Commit
 
-- Create commit without Claude attribution
+**IMPORTANT**: Never add Claude AI attribution or co-author tags to commits. This includes:
+- ❌ NO "Generated with Claude Code" links
+- ❌ NO "Co-Authored-By: Claude" tags
+- ❌ NO emoji or branding
+
+Create clean commit with just the message and bullet points.
+
 - Push to remote if explicitly requested
 - Report what was committed
 
