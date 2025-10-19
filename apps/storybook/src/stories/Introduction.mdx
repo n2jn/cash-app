@@ -1,0 +1,148 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Introduction" />
+
+# Cash App UI Component Library
+
+Welcome to the Cash App UI component library documentation. This Storybook showcases all the shared UI components built with Gluestack UI that are used across both web and mobile platforms.
+
+## Overview
+
+This component library is built on top of [Gluestack UI](https://gluestack.io/ui/docs), providing a unified design system that works seamlessly across:
+
+- **Web** (Next.js with React)
+- **Mobile** (React Native with Expo)
+
+All components are designed to be:
+- **Cross-platform compatible**
+- **Accessible** (WCAG compliant)
+- **Themeable** (customizable with design tokens)
+- **Type-safe** (full TypeScript support)
+
+## Component Architecture
+
+### Atomic Design
+
+Our components follow the atomic design methodology:
+
+- **Atoms**: Basic building blocks (Button, Input)
+- **Molecules**: Combinations of atoms (FormField, Card)
+- **Organisms**: Complex UI sections (coming soon)
+
+### Design System
+
+The components use the Cash App brand colors:
+
+- **Primary**: #00D632 (Cash App green)
+- **Primary Light**: #4AE16D
+- **Primary Dark**: #00A826
+- **Error**: #F23645
+- **Warning**: #FFA500
+- **Success**: #00D632
+- **Info**: #007AFF
+
+## Getting Started
+
+### Installation
+
+The UI components are available as a workspace package in the monorepo:
+
+```bash
+npm install
+```
+
+### Usage
+
+Import components from the `@cash-app/ui` package:
+
+```typescript
+import { Button, ButtonText, Input, InputField, FormField, Card } from '@cash-app/ui'
+
+function MyComponent() {
+  return (
+    <Card variant="elevated" padding="md">
+      <FormField
+        label="Email"
+        isRequired
+        inputProps={{
+          type: 'email',
+          placeholder: 'email@example.com',
+        }}
+      />
+      <Button action="primary" size="lg">
+        <ButtonText>Submit</ButtonText>
+      </Button>
+    </Card>
+  )
+}
+```
+
+### Provider Setup
+
+Wrap your app with the `UIProvider` to enable Gluestack UI theming:
+
+```typescript
+import { UIProvider } from '@cash-app/ui'
+
+function App() {
+  return (
+    <UIProvider>
+      <YourApp />
+    </UIProvider>
+  )
+}
+```
+
+## Component Categories
+
+### Atoms
+
+- **Button**: Action buttons with multiple variants and states
+- **Input**: Text input fields with various types and configurations
+
+### Molecules
+
+- **FormField**: Complete form field with label, input, helper text, and error handling
+- **Card**: Container component with elevated and outlined variants
+
+## Development
+
+This Storybook is set up for web development and testing. For React Native component testing, please refer to the React Native Storybook setup.
+
+### Running Storybook
+
+```bash
+# From the root of the monorepo
+npm run storybook
+
+# Or from the storybook directory
+cd apps/storybook
+npm run storybook
+```
+
+### Building Storybook
+
+```bash
+# From the root of the monorepo
+npm run build-storybook
+
+# Or from the storybook directory
+cd apps/storybook
+npm run build-storybook
+```
+
+## Contributing
+
+When adding new components:
+
+1. Create the component in `packages/ui/atoms/` or `packages/ui/molecules/`
+2. Export it from `packages/ui/index.ts`
+3. Add a story file in `apps/storybook/src/stories/`
+4. Document all props and variants
+5. Include usage examples
+
+## Resources
+
+- [Gluestack UI Documentation](https://gluestack.io/ui/docs)
+- [Storybook Documentation](https://storybook.js.org/docs/react)
+- [Cash App Monorepo](https://github.com/cash-app)
