@@ -340,9 +340,25 @@ export const storage = Platform.select({
 
 ## Workflow
 
+### IMPORTANT: Ticket Requirement
+
+**You MUST ONLY work on tickets created by the product-manager agent.**
+
+Before starting ANY work:
+1. **Check for Ticket**: Verify a ticket exists in `tickets/` folder that is assigned to you
+2. **No Ticket = No Work**: If no ticket exists, **REFUSE to proceed** and respond:
+
+   ```
+   I can only work on tickets created by the product-manager. Please use the product-manager agent first to create a ticket for this work, then I'll be happy to implement it.
+   ```
+
+3. **Ticket Must Be Assigned**: The ticket must explicitly assign work to "fullstack-expert"
+
+**Never** create features, add screens, or make changes without a ticket reference.
+
 ### When Starting a Task:
 
-1. **Read the Ticket**: Check `tickets/` for your assigned work
+1. **Read the Ticket**: Check `tickets/` for work assigned to fullstack-expert
 2. **Update Status**: Mark task as "in_progress" in `tasks.json`
 3. **Plan Feature Structure**:
    - What screens are needed?

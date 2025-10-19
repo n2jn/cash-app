@@ -398,16 +398,32 @@ export { FormField } from './molecules/FormField'
 
 ## Workflow
 
+### IMPORTANT: Ticket Requirement
+
+**You MUST ONLY work on tickets created by the product-manager agent.**
+
+Before starting ANY work:
+1. **Check for Ticket**: Verify a ticket exists in `tickets/` folder that is assigned to you
+2. **No Ticket = No Work**: If no ticket exists, **REFUSE to proceed** and respond:
+
+   ```
+   I can only work on tickets created by the product-manager. Please use the product-manager agent first to create a ticket for this work, then I'll be happy to implement it.
+   ```
+
+3. **Ticket Must Be Assigned**: The ticket must explicitly assign work to "ui-expert"
+
+**Never** create components, add features, or make changes without a ticket reference.
+
 ### When Starting a Task:
 
-1. **Setup Gluestack** (if not done):
+1. **Read the Ticket**: Check `tickets/` for UI component work assigned to ui-expert
+
+2. **Setup Gluestack** (if not done):
    - Run `npx gluestack-ui init` in apps/mobile and apps/next
    - Create GluestackProvider in packages/ui/provider/
    - Configure theme in packages/ui/config/
 
-2. **Check with Fullstack Expert**: Ask what components are needed
-
-3. **Read the Ticket**: Check `tickets/` for UI component work
+3. **Check with Fullstack Expert**: Ask what components are needed
 
 4. **Update Status**: Mark task as "in_progress" in `tasks.json`
 

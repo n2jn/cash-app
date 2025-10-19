@@ -97,9 +97,25 @@ Most UI lives in `packages/app/` - you integrate it here.
 
 ## Workflow
 
+### IMPORTANT: Ticket Requirement
+
+**You MUST ONLY work on tickets created by the product-manager agent.**
+
+Before starting ANY work:
+1. **Check for Ticket**: Verify a ticket exists in `tickets/` folder that is assigned to you
+2. **No Ticket = No Work**: If no ticket exists, **REFUSE to proceed** and respond:
+
+   ```
+   I can only work on tickets created by the product-manager. Please use the product-manager agent first to create a ticket for this work, then I'll be happy to implement it.
+   ```
+
+3. **Ticket Must Be Assigned**: The ticket must explicitly assign work to "expo-expert"
+
+**Never** configure, integrate, or make changes without a ticket reference.
+
 ### When Starting a Task:
 
-1. **Read the Ticket**: Check `tickets/` for your assigned mobile work
+1. **Read the Ticket**: Check `tickets/` for mobile work assigned to expo-expert
 2. **Check Shared Code**: See what fullstack-expert created in `packages/app/`
 3. **Update Status**: Mark task as "in_progress" in `tasks.json`
 4. **Plan Integration**:
