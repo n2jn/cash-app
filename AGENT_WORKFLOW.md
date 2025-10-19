@@ -11,24 +11,31 @@ This document explains how to use the specialized agents in this project to buil
 - Coordinates the team
 - Maintains task tracking
 
-### 💎 Fullstack Expert (NEW!)
+### 🎨 UI Expert (NEW!)
+**Agent**: `ui-expert`
+- Builds design system in `packages/ui/`
+- Creates reusable UI components (atoms, molecules, organisms)
+- Manages Storybook for component documentation
+- Ensures cross-platform compatibility
+
+### 💎 Fullstack Expert
 **Agent**: `fullstack-expert`
-- Creates shared UI in `packages/app/`
-- Builds cross-platform screens and components
+- Creates feature screens in `packages/app/`
+- Uses UI components from `@cash-app/ui`
 - Handles business logic and providers
 - Features work on both mobile AND web
 
 ### 📱 Expo Expert
 **Agent**: `expo-expert`
 - Configures mobile platform (apps/mobile/)
-- Integrates shared code from `packages/app/`
+- Integrates shared features
 - Handles mobile-only features (camera, GPS, etc.)
 - Optimizes for iOS and Android
 
 ### 🌐 Next.js Expert
 **Agent**: `nextjs-expert`
 - Configures web platform (apps/next/)
-- Integrates shared code from `packages/app/`
+- Integrates shared features
 - Handles web-only features (SEO, SSR, etc.)
 - Optimizes for browsers
 
@@ -55,16 +62,16 @@ Simply describe what you want in natural language:
 I'll automatically launch the **product-manager** agent who will:
 - Analyze your request
 - Create a ticket in `tickets/FEATURE-XXX.md`
-- Break down into shared, mobile, and web tasks
+- Break down into UI, feature, and platform tasks
 - Update `tasks.json`
 
 Example response:
 ```
 Created FEATURE-001: User Authentication System
 
-Platform: Both (Mobile + Web)
 Tasks created:
-- 3 shared tasks → assigned to fullstack-expert
+- 3 UI component tasks → assigned to ui-expert
+- 2 feature tasks → assigned to fullstack-expert
 - 2 mobile integration tasks → assigned to expo-expert
 - 2 web integration tasks → assigned to nextjs-expert
 
@@ -75,19 +82,23 @@ See: tickets/FEATURE-001.md
 
 I'll launch the agents in the right order:
 
-**Step 1: Shared Code (runs first)**
+**Step 1: UI Components (runs first)**
+- Launch **ui-expert** agent
+- Creates reusable components in `packages/ui/`
+- Adds Storybook stories
+- Follows Atomic Design (atoms → molecules → organisms)
+
+**Step 2: Feature Screens (runs second)**
 - Launch **fullstack-expert** agent
-- Creates screens and components in `packages/app/`
+- Creates feature screens in `packages/app/`
+- Uses UI components from `@cash-app/ui`
 - Builds cross-platform features
 
-**Step 2: Platform Integration (runs after shared code)**
-- Launch **expo-expert** agent (parallel)
-  - Integrates shared code into `apps/mobile/`
-  - Configures Expo settings
-
-- Launch **nextjs-expert** agent (parallel)
-  - Integrates shared code into `apps/next/`
-  - Configures Next.js settings
+**Step 3: Platform Integration (runs third)**
+- Launch **expo-expert** + **nextjs-expert** (parallel)
+  - Expo: Integrates features into `apps/mobile/`
+  - Next.js: Integrates features into `apps/next/`
+  - Both configure platform-specific settings
 
 ### 4️⃣ Review and Iterate
 
@@ -128,19 +139,24 @@ You: "Build a user profile screen for both apps"
 Me:
 1. Launch product-manager
    → Creates FEATURE-003.md
-   → Breaks into: 2 shared tasks, 1 mobile task, 1 web task
+   → Breaks into: 2 UI tasks, 2 feature tasks, 2 platform tasks
 
-2. Launch fullstack-expert
+2. Launch ui-expert
+   → Creates Avatar atom in packages/ui/
+   → Creates ProfileCard molecule in packages/ui/
+   → Adds Storybook stories
+
+3. Launch fullstack-expert
    → Creates ProfileScreen in packages/app/
+   → Uses Avatar and ProfileCard from @cash-app/ui
    → Creates ProfileProvider
-   → Builds cross-platform UI
 
-3. Launch expo-expert + nextjs-expert (parallel)
+4. Launch expo-expert + nextjs-expert (parallel)
    → expo-expert: Integrates ProfileScreen in apps/mobile/
    → nextjs-expert: Integrates ProfileScreen in apps/next/
    → Both configure routing
 
-4. Report completion
+5. Report completion
 ```
 
 ### Complex Feature
@@ -218,23 +234,28 @@ cash-app/
 ├── .claude/
 │   └── agents/
 │       ├── product-manager.md     # PM agent
-│       ├── fullstack-expert.md    # Shared code dev
+│       ├── ui-expert.md           # UI component library
+│       ├── fullstack-expert.md    # Feature screens
 │       ├── expo-expert.md         # Mobile platform
 │       └── nextjs-expert.md       # Web platform
 ├── packages/
-│   └── app/                       # ⭐ SHARED CODE
+│   ├── ui/                        # ⭐ UI LIBRARY (Atomic Design)
+│   │   ├── atoms/                 # Basic components
+│   │   ├── molecules/             # Simple combinations
+│   │   ├── organisms/             # Complex components
+│   │   ├── templates/             # Page layouts
+│   │   └── utils/theme.ts         # Design tokens
+│   └── app/                       # ⭐ FEATURE CODE
 │       ├── features/              # Feature modules
-│       ├── components/            # Shared components
 │       ├── provider/              # Providers
 │       ├── hooks/                 # Hooks
 │       └── types/                 # Types
 ├── apps/
-│   ├── mobile/                    # Expo (integrates shared code)
-│   └── next/                      # Next.js (integrates shared code)
-├── tickets/
-│   ├── README.md                  # Ticket system docs
-│   ├── .template.md               # Ticket template
-│   └── FEATURE-001.md            # Feature tickets
+│   ├── mobile/                    # Expo (integrates features)
+│   ├── next/                      # Next.js (integrates features)
+│   ├── storybook/                 # Web component docs
+│   └── storybook-rn/              # Mobile component docs
+├── tickets/                       # Feature tickets
 └── tasks.json                     # Task tracking
 ```
 
@@ -314,19 +335,36 @@ apps/next/app/(auth)/login/page.tsx     // Import and use
 
 | Agent | Responsibility | Output |
 |-------|---------------|--------|
-| **fullstack-expert** | Shared UI & logic | `packages/app/` |
+| **ui-expert** | Reusable UI components | `packages/ui/` |
+| **fullstack-expert** | Feature screens & logic | `packages/app/` |
 | **expo-expert** | Mobile config | `apps/mobile/` |
 | **nextjs-expert** | Web config | `apps/next/` |
+
+### Component Flow
+
+```
+ui-expert creates Button in packages/ui/
+        ↓
+fullstack-expert uses Button in LoginScreen (packages/app/)
+        ↓
+expo-expert integrates LoginScreen (apps/mobile/)
+nextjs-expert integrates LoginScreen (apps/next/)
+```
 
 ## Workflow Summary
 
 1. **You**: Describe feature in natural language
-2. **Product Manager**: Creates structured tickets with task breakdown
-3. **Fullstack Expert**: Builds shared code (if cross-platform)
-4. **Platform Experts**: Integrate and configure (in parallel)
-5. **You**: Review, iterate, approve
+2. **Product Manager**: Creates tickets with UI, feature, and platform tasks
+3. **UI Expert**: Builds reusable components (if needed)
+4. **Fullstack Expert**: Builds feature using UI components
+5. **Platform Experts**: Integrate and configure (in parallel)
+6. **You**: Review, iterate, approve
 
-This gives you a full "virtual team" with zero code duplication! 🚀
+This gives you a full "virtual team" with:
+- ✅ Reusable design system
+- ✅ Zero UI duplication
+- ✅ Documented components (Storybook)
+- ✅ Cross-platform features
 
 ## Questions?
 

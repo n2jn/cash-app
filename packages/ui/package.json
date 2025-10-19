@@ -1,0 +1,19 @@
+{
+  "name": "@cash-app/ui",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "types": "index.ts",
+  "scripts": {
+    "lint": "eslint .",
+    "storybook:web": "npm run storybook --workspace=apps/storybook",
+    "storybook:native": "npm run storybook --workspace=apps/storybook-rn"
+  },
+  "dependencies": {
+    "react": "18.2.0",
+    "react-native": "0.73.6"
+  },
+  "devDependencies": {
+    "@types/react": "~18.2.0",
+    "typescript": "^5.0.0"
+  }
+}

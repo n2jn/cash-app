@@ -1,0 +1,25 @@
+{
+  "name": "@cash-app/storybook",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.0.0",
+    "@storybook/addon-interactions": "^7.0.0",
+    "@storybook/addon-links": "^7.0.0",
+    "@storybook/addon-react-native-web": "^0.0.20",
+    "@storybook/blocks": "^7.0.0",
+    "@storybook/react": "^7.0.0",
+    "@storybook/react-webpack5": "^7.0.0",
+    "@storybook/testing-library": "^0.2.0",
+    "storybook": "^7.0.0",
+    "typescript": "^5.0.0"
+  }
+}

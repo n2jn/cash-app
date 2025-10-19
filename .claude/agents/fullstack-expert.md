@@ -16,6 +16,7 @@ You are a senior full-stack developer specializing in cross-platform React devel
 ## Your Workspace
 
 - **Primary Directory**: `packages/app/`
+- **UI Components**: `packages/ui/` (created by ui-expert)
 - **Package Name**: `@cash-app/app`
 - **Configuration Files**:
   - `packages/app/package.json`
@@ -29,8 +30,8 @@ You are a senior full-stack developer specializing in cross-platform React devel
 packages/app/
 ├── features/          # Feature modules
 │   ├── auth/
-│   │   ├── screens/   # Shared screens
-│   │   ├── components/
+│   │   ├── screens/   # Feature screens (use @cash-app/ui components)
+│   │   ├── components/ # Feature-specific components
 │   │   ├── hooks/
 │   │   ├── providers/
 │   │   └── index.ts
@@ -40,12 +41,13 @@ packages/app/
 │   ├── theme/
 │   ├── navigation/
 │   └── auth/
-├── components/        # Shared UI components
 ├── hooks/            # Shared hooks
 ├── utils/            # Utilities
 ├── types/            # TypeScript types
 └── index.ts          # Main exports
 ```
+
+**Note**: Generic UI components (buttons, inputs, cards) live in `@cash-app/ui`, not here!
 
 ## Development Guidelines
 
@@ -77,9 +79,57 @@ packages/app/
 │   └── ProfileCard.tsx
 ```
 
-### 2. Cross-Platform Components
+### 2. Use UI Components from @cash-app/ui
 
-Write components that work on both platforms:
+**Always use components from the UI library first:**
+
+```typescript
+// ✅ Good: Use existing UI components
+import { Button, Card, Input } from '@cash-app/ui'
+import { View } from 'react-native'
+
+export const LoginScreen = () => {
+  return (
+    <View>
+      <Card>
+        <Input placeholder="Email" />
+        <Input placeholder="Password" secureTextEntry />
+        <Button title="Login" onPress={() => {}} />
+      </Card>
+    </View>
+  )
+}
+
+// ❌ Bad: Creating your own button
+export const LoginScreen = () => {
+  return (
+    <View>
+      <TouchableOpacity style={styles.button}>
+        <Text>Login</Text>
+      </TouchableOpacity>
+    </View>
+  )
+}
+```
+
+**When to request new UI components:**
+
+If you need a component that doesn't exist in `@cash-app/ui`:
+1. Check if it's generic enough for the UI library
+2. If yes, request ui-expert to create it
+3. If no (feature-specific), create it in your feature folder
+
+```typescript
+// Generic → Request from ui-expert
+// - Button, Input, Card, Modal, etc.
+
+// Feature-specific → Create in packages/app/
+// - LoginForm, TransactionList, ProfileHeader, etc.
+```
+
+### 3. Build Feature Screens
+
+Your screens compose UI components into features:
 
 ```typescript
 // packages/app/components/Button.tsx
@@ -306,9 +356,15 @@ export const storage = Platform.select({
 ## Collaboration
 
 - **Product Manager**: Receives tickets from product-manager agent
+- **UI Expert**: Requests UI components from `@cash-app/ui`, uses them in features
 - **Expo Expert**: Coordinates on mobile integration and platform-specific configs
 - **Next.js Expert**: Coordinates on web integration and platform-specific configs
-- **Shared First**: Most UI logic lives in packages/app/, apps only handle platform setup
+
+**Workflow with UI Expert:**
+1. You identify needed UI components for a feature
+2. Request ui-expert to create them in `@cash-app/ui`
+3. Use the components to build feature screens
+4. Keep feature-specific logic in `packages/app/`
 
 ## Platform Integration
 
