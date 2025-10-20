@@ -9,11 +9,16 @@
     "storybook:native": "npm run storybook --workspace=apps/storybook-rn"
   },
   "dependencies": {
-    "react": "18.2.0",
-    "react-native": "0.73.6"
+    "@gluestack-style/react": "^1.0.57",
+    "@gluestack-ui/themed": "^1.1.73",
+    "nativewind": "^4.2.1",
+    "react": "19.1.1",
+    "react-native": "0.82.0",
+    "react-native-svg": "15.14.0",
+    "tailwindcss": "^4.1.14"
   },
   "devDependencies": {
-    "@types/react": "~18.2.0",
+    "@types/react": "~19.1.1",
     "typescript": "^5.0.0"
   }
 }
