@@ -1,9 +1,470 @@
 {
   "version": "1.0.0",
-  "tasks": [],
+  "tasks": [
+    {
+      "id": "FEATURE-001-01",
+      "title": "Initialize Gluestack UI in mobile app",
+      "description": "Run npx gluestack-ui init in apps/mobile",
+      "platform": "mobile",
+      "status": "done",
+      "assignee": "ui-expert",
+      "ticketRef": "FEATURE-001",
+      "dependencies": []
+    },
+    {
+      "id": "FEATURE-001-02",
+      "title": "Initialize Gluestack UI in web app",
+      "description": "Run npx gluestack-ui init in apps/next",
+      "platform": "web",
+      "status": "done",
+      "assignee": "ui-expert",
+      "ticketRef": "FEATURE-001",
+      "dependencies": []
+    },
+    {
+      "id": "FEATURE-001-03",
+      "title": "Create GluestackProvider wrapper",
+      "description": "Create GluestackProvider wrapper in packages/ui/provider/",
+      "platform": "both",
+      "status": "done",
+      "assignee": "ui-expert",
+      "ticketRef": "FEATURE-001",
+      "dependencies": ["FEATURE-001-01", "FEATURE-001-02"]
+    },
+    {
+      "id": "FEATURE-001-04",
+      "title": "Configure Gluestack theme",
+      "description": "Configure theme in packages/ui/config/gluestack-ui.config.ts",
+      "platform": "both",
+      "status": "done",
+      "assignee": "ui-expert",
+      "ticketRef": "FEATURE-001",
+      "dependencies": ["FEATURE-001-01", "FEATURE-001-02"]
+    },
+    {
+      "id": "FEATURE-001-05",
+      "title": "Create Input component (atom)",
+      "description": "Re-export Gluestack Input and InputField with custom focus styles",
+      "platform": "both",
+      "status": "done",
+      "assignee": "ui-expert",
+      "ticketRef": "FEATURE-001",
+      "dependencies": ["FEATURE-001-03", "FEATURE-001-04"]
+    },
+    {
+      "id": "FEATURE-001-06",
+      "title": "Create Input Storybook stories",
+      "description": "Create Input.stories.tsx with all variants",
+      "platform": "both",
+      "status": "done",
+      "assignee": "ui-expert",
+      "ticketRef": "FEATURE-001",
+      "dependencies": ["FEATURE-001-05"]
+    },
+    {
+      "id": "FEATURE-001-07",
+      "title": "Create Button component (atom)",
+      "description": "Re-export Gluestack Button, ButtonText, ButtonSpinner with custom defaults",
+      "platform": "both",
+      "status": "done",
+      "assignee": "ui-expert",
+      "ticketRef": "FEATURE-001",
+      "dependencies": ["FEATURE-001-03", "FEATURE-001-04"]
+    },
+    {
+      "id": "FEATURE-001-08",
+      "title": "Create Button Storybook stories",
+      "description": "Create Button.stories.tsx showing all variants",
+      "platform": "both",
+      "status": "done",
+      "assignee": "ui-expert",
+      "ticketRef": "FEATURE-001",
+      "dependencies": ["FEATURE-001-07"]
+    },
+    {
+      "id": "FEATURE-001-09",
+      "title": "Create FormField component (molecule)",
+      "description": "Extend Gluestack FormControl with label, input, and error display",
+      "platform": "both",
+      "status": "done",
+      "assignee": "ui-expert",
+      "ticketRef": "FEATURE-001",
+      "dependencies": ["FEATURE-001-05", "FEATURE-001-07"]
+    },
+    {
+      "id": "FEATURE-001-10",
+      "title": "Create FormField Storybook stories",
+      "description": "Create FormField.stories.tsx with validation examples",
+      "platform": "both",
+      "status": "done",
+      "assignee": "ui-expert",
+      "ticketRef": "FEATURE-001",
+      "dependencies": ["FEATURE-001-09"]
+    },
+    {
+      "id": "FEATURE-001-11",
+      "title": "Create Card component (molecule)",
+      "description": "Extend Gluestack Box with elevated and outlined variants",
+      "platform": "both",
+      "status": "done",
+      "assignee": "ui-expert",
+      "ticketRef": "FEATURE-001",
+      "dependencies": ["FEATURE-001-03", "FEATURE-001-04"]
+    },
+    {
+      "id": "FEATURE-001-12",
+      "title": "Create Card Storybook stories",
+      "description": "Create Card.stories.tsx showing both variants",
+      "platform": "both",
+      "status": "done",
+      "assignee": "ui-expert",
+      "ticketRef": "FEATURE-001",
+      "dependencies": ["FEATURE-001-11"]
+    },
+    {
+      "id": "FEATURE-001-13",
+      "title": "Update UI package exports",
+      "description": "Update packages/ui/index.ts with all new component exports",
+      "platform": "both",
+      "status": "done",
+      "assignee": "ui-expert",
+      "ticketRef": "FEATURE-001",
+      "dependencies": ["FEATURE-001-05", "FEATURE-001-07", "FEATURE-001-09", "FEATURE-001-11"]
+    },
+    {
+      "id": "FEATURE-001-14",
+      "title": "Test web Storybook",
+      "description": "Run and verify web Storybook works with all components",
+      "platform": "web",
+      "status": "done",
+      "assignee": "ui-expert",
+      "ticketRef": "FEATURE-001",
+      "dependencies": ["FEATURE-001-06", "FEATURE-001-08", "FEATURE-001-10", "FEATURE-001-12"]
+    },
+    {
+      "id": "FEATURE-001-15",
+      "title": "Test React Native Storybook",
+      "description": "Run and verify React Native Storybook works with all components",
+      "platform": "mobile",
+      "status": "done",
+      "assignee": "ui-expert",
+      "ticketRef": "FEATURE-001",
+      "dependencies": ["FEATURE-001-06", "FEATURE-001-08", "FEATURE-001-10", "FEATURE-001-12"]
+    },
+    {
+      "id": "FEATURE-002-01",
+      "title": "Create AuthProvider",
+      "description": "Create authentication context provider in packages/app/providers/",
+      "platform": "both",
+      "status": "done",
+      "assignee": "fullstack-expert",
+      "ticketRef": "FEATURE-002",
+      "dependencies": []
+    },
+    {
+      "id": "FEATURE-002-02",
+      "title": "Create validation utilities",
+      "description": "Create email and password validation functions",
+      "platform": "both",
+      "status": "done",
+      "assignee": "fullstack-expert",
+      "ticketRef": "FEATURE-002",
+      "dependencies": []
+    },
+    {
+      "id": "FEATURE-002-03",
+      "title": "Create error handling utilities",
+      "description": "Map authentication errors to user-friendly messages",
+      "platform": "both",
+      "status": "done",
+      "assignee": "fullstack-expert",
+      "ticketRef": "FEATURE-002",
+      "dependencies": []
+    },
+    {
+      "id": "FEATURE-002-04",
+      "title": "Create LoginScreen component",
+      "description": "Build login screen using UI components from @cash-app/ui",
+      "platform": "both",
+      "status": "done",
+      "assignee": "fullstack-expert",
+      "ticketRef": "FEATURE-002",
+      "dependencies": ["FEATURE-001-13", "FEATURE-002-01", "FEATURE-002-02", "FEATURE-002-03"]
+    },
+    {
+      "id": "FEATURE-002-05",
+      "title": "Implement form validation",
+      "description": "Add real-time validation for email and password fields",
+      "platform": "both",
+      "status": "done",
+      "assignee": "fullstack-expert",
+      "ticketRef": "FEATURE-002",
+      "dependencies": ["FEATURE-002-04"]
+    },
+    {
+      "id": "FEATURE-002-06",
+      "title": "Implement login flow logic",
+      "description": "Handle form submission, loading states, and error display",
+      "platform": "both",
+      "status": "done",
+      "assignee": "fullstack-expert",
+      "ticketRef": "FEATURE-002",
+      "dependencies": ["FEATURE-002-04"]
+    },
+    {
+      "id": "FEATURE-002-07",
+      "title": "Implement responsive layout",
+      "description": "Create responsive layout that works on mobile and web",
+      "platform": "both",
+      "status": "done",
+      "assignee": "fullstack-expert",
+      "ticketRef": "FEATURE-002",
+      "dependencies": ["FEATURE-002-04"]
+    },
+    {
+      "id": "FEATURE-002-08",
+      "title": "Write unit tests",
+      "description": "Create unit tests for validation logic and components",
+      "platform": "both",
+      "status": "done",
+      "assignee": "fullstack-expert",
+      "ticketRef": "FEATURE-002",
+      "dependencies": ["FEATURE-002-05", "FEATURE-002-06"]
+    },
+    {
+      "id": "FEATURE-002-09",
+      "title": "Write integration tests",
+      "description": "Create integration tests for login flow",
+      "platform": "both",
+      "status": "done",
+      "assignee": "fullstack-expert",
+      "ticketRef": "FEATURE-002",
+      "dependencies": ["FEATURE-002-05", "FEATURE-002-06"]
+    },
+    {
+      "id": "FEATURE-003-01",
+      "title": "Configure GluestackUIProvider for mobile",
+      "description": "Set up GluestackUIProvider in Expo app",
+      "platform": "mobile",
+      "status": "done",
+      "assignee": "expo-expert",
+      "ticketRef": "FEATURE-003",
+      "dependencies": ["FEATURE-001-13"]
+    },
+    {
+      "id": "FEATURE-003-02",
+      "title": "Configure AuthProvider for mobile",
+      "description": "Set up AuthProvider with AsyncStorage persistence",
+      "platform": "mobile",
+      "status": "done",
+      "assignee": "expo-expert",
+      "ticketRef": "FEATURE-003",
+      "dependencies": ["FEATURE-002-01"]
+    },
+    {
+      "id": "FEATURE-003-03",
+      "title": "Set up navigation stack",
+      "description": "Configure Expo Router navigation with login and home screens",
+      "platform": "mobile",
+      "status": "done",
+      "assignee": "expo-expert",
+      "ticketRef": "FEATURE-003",
+      "dependencies": ["FEATURE-003-01", "FEATURE-003-02"]
+    },
+    {
+      "id": "FEATURE-003-04",
+      "title": "Create login screen route",
+      "description": "Integrate LoginScreen into mobile app navigation",
+      "platform": "mobile",
+      "status": "done",
+      "assignee": "expo-expert",
+      "ticketRef": "FEATURE-003",
+      "dependencies": ["FEATURE-002-04", "FEATURE-003-03"]
+    },
+    {
+      "id": "FEATURE-003-05",
+      "title": "Configure keyboard behavior",
+      "description": "Set up KeyboardAvoidingView and keyboard dismiss",
+      "platform": "mobile",
+      "status": "done",
+      "assignee": "expo-expert",
+      "ticketRef": "FEATURE-003",
+      "dependencies": ["FEATURE-003-04"]
+    },
+    {
+      "id": "FEATURE-003-06",
+      "title": "Configure safe areas (iOS)",
+      "description": "Set up SafeAreaView for iOS notch and home indicator",
+      "platform": "mobile",
+      "status": "done",
+      "assignee": "expo-expert",
+      "ticketRef": "FEATURE-003",
+      "dependencies": ["FEATURE-003-04"]
+    },
+    {
+      "id": "FEATURE-003-07",
+      "title": "Configure status bar",
+      "description": "Set status bar style and background color",
+      "platform": "mobile",
+      "status": "done",
+      "assignee": "expo-expert",
+      "ticketRef": "FEATURE-003",
+      "dependencies": ["FEATURE-003-04"]
+    },
+    {
+      "id": "FEATURE-003-08",
+      "title": "Configure navigation flow",
+      "description": "Set up navigation from login to home after successful auth",
+      "platform": "mobile",
+      "status": "done",
+      "assignee": "expo-expert",
+      "ticketRef": "FEATURE-003",
+      "dependencies": ["FEATURE-003-04"]
+    },
+    {
+      "id": "FEATURE-003-09",
+      "title": "Configure auth state persistence",
+      "description": "Set up AsyncStorage for auth token persistence",
+      "platform": "mobile",
+      "status": "done",
+      "assignee": "expo-expert",
+      "ticketRef": "FEATURE-003",
+      "dependencies": ["FEATURE-003-02"]
+    },
+    {
+      "id": "FEATURE-003-10",
+      "title": "Test on iOS simulator",
+      "description": "Test login flow, navigation, and keyboard on iOS",
+      "platform": "mobile",
+      "status": "done",
+      "assignee": "expo-expert",
+      "ticketRef": "FEATURE-003",
+      "dependencies": ["FEATURE-003-05", "FEATURE-003-06", "FEATURE-003-07", "FEATURE-003-08", "FEATURE-003-09"]
+    },
+    {
+      "id": "FEATURE-003-11",
+      "title": "Test on Android emulator",
+      "description": "Test login flow, navigation, and keyboard on Android",
+      "platform": "mobile",
+      "status": "done",
+      "assignee": "expo-expert",
+      "ticketRef": "FEATURE-003",
+      "dependencies": ["FEATURE-003-05", "FEATURE-003-06", "FEATURE-003-07", "FEATURE-003-08", "FEATURE-003-09"]
+    },
+    {
+      "id": "FEATURE-004-01",
+      "title": "Configure GluestackUIProvider for web",
+      "description": "Set up GluestackUIProvider in Next.js app with SSR support",
+      "platform": "web",
+      "status": "done",
+      "assignee": "nextjs-expert",
+      "ticketRef": "FEATURE-004",
+      "dependencies": ["FEATURE-001-13"]
+    },
+    {
+      "id": "FEATURE-004-02",
+      "title": "Configure AuthProvider for web",
+      "description": "Set up AuthProvider with cookie/localStorage persistence",
+      "platform": "web",
+      "status": "done",
+      "assignee": "nextjs-expert",
+      "ticketRef": "FEATURE-004",
+      "dependencies": ["FEATURE-002-01"]
+    },
+    {
+      "id": "FEATURE-004-03",
+      "title": "Create login page route",
+      "description": "Create login page in Next.js app router or pages directory",
+      "platform": "web",
+      "status": "done",
+      "assignee": "nextjs-expert",
+      "ticketRef": "FEATURE-004",
+      "dependencies": ["FEATURE-002-04", "FEATURE-004-01", "FEATURE-004-02"]
+    },
+    {
+      "id": "FEATURE-004-04",
+      "title": "Configure SEO metadata",
+      "description": "Add title, description, and meta tags for login page",
+      "platform": "web",
+      "status": "done",
+      "assignee": "nextjs-expert",
+      "ticketRef": "FEATURE-004",
+      "dependencies": ["FEATURE-004-03"]
+    },
+    {
+      "id": "FEATURE-004-05",
+      "title": "Handle SSR compatibility",
+      "description": "Prevent hydration mismatches and handle client-only operations",
+      "platform": "web",
+      "status": "done",
+      "assignee": "nextjs-expert",
+      "ticketRef": "FEATURE-004",
+      "dependencies": ["FEATURE-004-03"]
+    },
+    {
+      "id": "FEATURE-004-06",
+      "title": "Create auth middleware",
+      "description": "Set up middleware for protected routes and redirects",
+      "platform": "web",
+      "status": "done",
+      "assignee": "nextjs-expert",
+      "ticketRef": "FEATURE-004",
+      "dependencies": ["FEATURE-004-02"]
+    },
+    {
+      "id": "FEATURE-004-07",
+      "title": "Configure auth state persistence",
+      "description": "Set up httpOnly cookies for secure auth token storage",
+      "platform": "web",
+      "status": "done",
+      "assignee": "nextjs-expert",
+      "ticketRef": "FEATURE-004",
+      "dependencies": ["FEATURE-004-02"]
+    },
+    {
+      "id": "FEATURE-004-08",
+      "title": "Test SSR/SSG",
+      "description": "Test server-side rendering and static generation",
+      "platform": "web",
+      "status": "done",
+      "assignee": "nextjs-expert",
+      "ticketRef": "FEATURE-004",
+      "dependencies": ["FEATURE-004-05"]
+    },
+    {
+      "id": "FEATURE-004-09",
+      "title": "Test authentication flow",
+      "description": "Test login, redirects, and auth state persistence",
+      "platform": "web",
+      "status": "done",
+      "assignee": "nextjs-expert",
+      "ticketRef": "FEATURE-004",
+      "dependencies": ["FEATURE-004-03", "FEATURE-004-06", "FEATURE-004-07"]
+    },
+    {
+      "id": "FEATURE-004-10",
+      "title": "Test responsive design",
+      "description": "Test on mobile, tablet, and desktop viewports",
+      "platform": "web",
+      "status": "done",
+      "assignee": "nextjs-expert",
+      "ticketRef": "FEATURE-004",
+      "dependencies": ["FEATURE-004-03"]
+    },
+    {
+      "id": "FEATURE-004-11",
+      "title": "Test browser compatibility",
+      "description": "Test on Chrome, Firefox, Safari, and Edge",
+      "platform": "web",
+      "status": "done",
+      "assignee": "nextjs-expert",
+      "ticketRef": "FEATURE-004",
+      "dependencies": ["FEATURE-004-03"]
+    }
+  ],
   "metadata": {
-    "lastUpdated": null,
-    "totalTasks": 0,
-    "completedTasks": 0
+    "lastUpdated": "2025-10-20",
+    "totalTasks": 71,
+    "completedTasks": 71
   }
 }

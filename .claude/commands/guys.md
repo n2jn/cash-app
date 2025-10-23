@@ -4,6 +4,14 @@ description: Launch multi-agent team to build a feature across the full stack
 
 You are coordinating a team of specialized agents to build a feature across the entire stack (shared UI, Next.js web, and Expo mobile).
 
+## Tech Stack Overview
+
+**Mobile**: Expo SDK 54 + React Native 0.81.4 + Expo Router 6 (file-based routing)
+**Web**: Next.js 14 + React 18.2.0
+**UI Library**: Gluestack UI v1.1.73 + NativeWind v4.2.1 (cross-platform Tailwind)
+**Shared Logic**: packages/app (business logic, providers, hooks)
+**React Version**: React 19.1.1 (mobile), React 18.3.1 (web root), React 18.2.0 (Next.js)
+
 ## Feature Request
 
 {{input}}
@@ -14,10 +22,10 @@ Analyze the feature request and launch the appropriate specialized agents in par
 
 ### Available Agents
 
-1. **ui-expert**: Creates cross-platform UI components in `packages/ui` using Gluestack UI
-2. **nextjs-expert**: Integrates features into the Next.js web app in `apps/next`
-3. **expo-expert**: Integrates features into the Expo mobile app in `apps/mobile`
-4. **fullstack-expert**: Handles shared code, business logic, and cross-cutting concerns in `packages/`
+1. **ui-expert**: Creates cross-platform UI components in `packages/ui` using Gluestack UI + NativeWind
+2. **nextjs-expert**: Integrates features into the Next.js 14 web app in `apps/next`
+3. **expo-expert**: Integrates features into the Expo SDK 54 mobile app in `apps/mobile` with Expo Router 6
+4. **fullstack-expert**: Handles shared code, business logic, and cross-cutting concerns in `packages/app`
 
 ### Execution Strategy
 
@@ -34,10 +42,18 @@ Analyze the feature request and launch the appropriate specialized agents in par
 ### Example Agent Launch
 
 For a login feature:
-- **ui-expert**: Create LoginForm, Input, Button components using Gluestack UI
-- **nextjs-expert**: Create /login page in Next.js app using the LoginForm
-- **expo-expert**: Create login screen in mobile app using the LoginForm
-- **fullstack-expert**: Create authentication utilities and API client
+- **ui-expert**: Create LoginForm, Input, Button components using Gluestack UI + NativeWind
+- **nextjs-expert**: Create /login page in Next.js 14 app using the LoginForm
+- **expo-expert**: Create login screen in Expo mobile app using Expo Router 6 file-based routing
+- **fullstack-expert**: Create authentication utilities, providers, and API client in packages/app
+
+### Mobile Development Notes
+
+When launching expo-expert for mobile features:
+- Uses Expo Router 6 with file-based routing in `apps/mobile/app/`
+- Screens are created as route files (e.g., `app/login.tsx`, `app/(tabs)/home.tsx`)
+- Navigation is handled automatically by Expo Router
+- Supports native features: camera, GPS, notifications, etc.
 
 ### Important Guidelines
 

@@ -4,6 +4,13 @@ description: Product Manager creates tickets, then optionally launches dev team 
 
 You are orchestrating a complete feature development workflow: product planning → approval → implementation.
 
+## Tech Stack Overview
+
+**Mobile**: Expo SDK 54 + React Native 0.81.4 + Expo Router 6 (file-based routing)
+**Web**: Next.js 14 + React 18.2.0
+**UI Library**: Gluestack UI v1.1.73 + NativeWind v4.2.1 (cross-platform Tailwind)
+**Shared Logic**: packages/app (business logic, providers, hooks)
+
 ## Feature Request
 
 {{input}}
@@ -19,7 +26,9 @@ Launch the **product-manager** agent to analyze the feature request and create s
 - Define acceptance criteria for each ticket
 - Prioritize the tickets
 - Identify dependencies
-- Consider mobile, web, and shared component requirements
+- Consider mobile (Expo SDK 54), web (Next.js 14), and shared component requirements
+- Account for Expo Router 6 file-based routing on mobile
+- Leverage Gluestack UI + NativeWind for cross-platform UI consistency
 
 Use the Task tool to launch the product-manager agent with the feature request above.
 
