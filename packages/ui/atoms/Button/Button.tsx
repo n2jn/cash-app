@@ -48,6 +48,7 @@ export const Button: React.FC<ButtonProps> = ({
 }) => {
   return (
     <GluestackButton
+    
       isDisabled={isDisabled || isLoading}
       {...props}
     >

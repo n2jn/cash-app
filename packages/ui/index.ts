@@ -23,6 +23,22 @@ export type { InputProps, InputFieldProps } from './atoms/Input'
 export { Button, ButtonText, ButtonSpinner, ButtonIcon } from './atoms/Button'
 export type { ButtonProps, ButtonTextProps, ButtonSpinnerProps } from './atoms/Button'
 
+// Checkbox
+export { Checkbox, CheckboxIndicator, CheckboxIcon, CheckboxLabel } from './atoms/Checkbox'
+export type { CheckboxProps } from './atoms/Checkbox'
+
+// Link
+export { Link, LinkText } from './atoms/Link'
+export type { LinkProps } from './atoms/Link'
+
+// Icon
+export { Icon } from './atoms/Icon'
+export type { IconProps, IconName } from './atoms/Icon'
+
+// Divider
+export { Divider } from './atoms/Divider'
+export type { DividerProps } from './atoms/Divider'
+
 // ============================================================
 // MOLECULES
 // ============================================================
@@ -47,13 +63,41 @@ export {
 export { Card, Box } from './molecules/Card'
 export type { CardProps } from './molecules/Card'
 
+// PasswordInput
+export { PasswordInput } from './molecules/PasswordInput'
+export type { PasswordInputProps } from './molecules/PasswordInput'
+
+// FormLabel
+export { FormLabel } from './molecules/FormLabel'
+export type { FormLabelProps } from './molecules/FormLabel'
+
+// CheckboxField
+export { CheckboxField } from './molecules/CheckboxField'
+export type { CheckboxFieldProps } from './molecules/CheckboxField'
+
+// TextDivider
+export { TextDivider } from './molecules/TextDivider'
+export type { TextDividerProps } from './molecules/TextDivider'
+
+// SocialButton
+export { SocialButton } from './molecules/SocialButton'
+export type { SocialButtonProps, SocialProvider } from './molecules/SocialButton'
+
+// ============================================================
+// ORGANISMS
+// ============================================================
+
+// LoginForm
+export { LoginForm } from './organisms/LoginForm'
+export type { LoginFormProps } from './organisms/LoginForm'
+
 // ============================================================
 // GLUESTACK UI RE-EXPORTS
 // ============================================================
 // Re-export commonly used Gluestack components for convenience
 
 // Layout
-export { HStack, VStack, Center, Divider } from '@gluestack-ui/themed'
+export { HStack, VStack, Center } from '@gluestack-ui/themed'
 
 // Typography
 export { Text, Heading } from '@gluestack-ui/themed'

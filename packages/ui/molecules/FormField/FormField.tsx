@@ -33,6 +33,7 @@ export interface FormFieldProps {
   isDisabled?: boolean
   isReadOnly?: boolean
   inputProps?: ComponentProps<typeof InputField>
+  children?: React.ReactNode // Support custom input components like PasswordInput
 }
 
 /**
@@ -45,8 +46,9 @@ export interface FormFieldProps {
  *
  * @example
  * ```tsx
- * import { FormField } from '@cash-app/ui'
+ * import { FormField, PasswordInput } from '@cash-app/ui'
  *
+ * // Simple input
  * <FormField
  *   label="Email"
  *   isRequired
@@ -59,6 +61,16 @@ export interface FormFieldProps {
  *     onChangeText: setEmail,
  *   }}
  * />
+ *
+ * // Custom input component (like PasswordInput)
+ * <FormField label="Password" error={passwordError}>
+ *   <PasswordInput
+ *     value={password}
+ *     onChangeText={setPassword}
+ *     showPassword={showPassword}
+ *     onTogglePassword={() => setShowPassword(!showPassword)}
+ *   />
+ * </FormField>
  * ```
  */
 export const FormField: React.FC<FormFieldProps> = ({
@@ -70,6 +82,7 @@ export const FormField: React.FC<FormFieldProps> = ({
   isDisabled = false,
   isReadOnly = false,
   inputProps = {},
+  children,
 }) => {
   const hasError = Boolean(error) || isInvalid
 
@@ -88,14 +101,18 @@ export const FormField: React.FC<FormFieldProps> = ({
         </FormControlLabelText>
       </FormControlLabel>
 
-      {/* Input Field */}
-      <Input
-        isInvalid={hasError}
-        isDisabled={isDisabled}
-        isReadOnly={isReadOnly}
-      >
-        <InputField {...inputProps} />
-      </Input>
+      {/* Input Field - use children if provided, otherwise use default Input */}
+      {children ? (
+        children
+      ) : (
+        <Input
+          isInvalid={hasError}
+          isDisabled={isDisabled}
+          isReadOnly={isReadOnly}
+        >
+          <InputField {...inputProps} />
+        </Input>
+      )}
 
       {/* Helper Text */}
       {helperText && !hasError && (

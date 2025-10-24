@@ -460,11 +460,171 @@
       "assignee": "nextjs-expert",
       "ticketRef": "FEATURE-004",
       "dependencies": ["FEATURE-004-03"]
+    },
+    {
+      "id": "FEATURE-005-01",
+      "title": "Create Checkbox atom",
+      "description": "Re-export Gluestack Checkbox with custom styling in packages/ui/atoms/Checkbox/",
+      "platform": "both",
+      "status": "todo",
+      "assignee": "ui-expert",
+      "ticketRef": "FEATURE-005",
+      "dependencies": []
+    },
+    {
+      "id": "FEATURE-005-02",
+      "title": "Create Link atom",
+      "description": "Re-export Gluestack Link or create custom Pressable in packages/ui/atoms/Link/",
+      "platform": "both",
+      "status": "todo",
+      "assignee": "ui-expert",
+      "ticketRef": "FEATURE-005",
+      "dependencies": []
+    },
+    {
+      "id": "FEATURE-005-03",
+      "title": "Create Icon atom",
+      "description": "Wrapper for react-native-svg icons in packages/ui/atoms/Icon/",
+      "platform": "both",
+      "status": "todo",
+      "assignee": "ui-expert",
+      "ticketRef": "FEATURE-005",
+      "dependencies": []
+    },
+    {
+      "id": "FEATURE-005-04",
+      "title": "Create Divider atom",
+      "description": "Re-export Gluestack Divider with custom variants in packages/ui/atoms/Divider/",
+      "platform": "both",
+      "status": "todo",
+      "assignee": "ui-expert",
+      "ticketRef": "FEATURE-005",
+      "dependencies": []
+    },
+    {
+      "id": "FEATURE-005-05",
+      "title": "Enhance Text atom",
+      "description": "Verify Gluestack Text variants match design tokens (heading-xl, text-sm-medium, etc.)",
+      "platform": "both",
+      "status": "todo",
+      "assignee": "ui-expert",
+      "ticketRef": "FEATURE-005",
+      "dependencies": []
+    },
+    {
+      "id": "FEATURE-005-06",
+      "title": "Enhance Heading atom",
+      "description": "Verify Gluestack Heading size variants match design tokens",
+      "platform": "both",
+      "status": "todo",
+      "assignee": "ui-expert",
+      "ticketRef": "FEATURE-005",
+      "dependencies": []
+    },
+    {
+      "id": "FEATURE-005-07",
+      "title": "Enhance Input with password toggle",
+      "description": "Extend Input atom with PasswordInput variant and eye icon toggle",
+      "platform": "both",
+      "status": "todo",
+      "assignee": "ui-expert",
+      "ticketRef": "FEATURE-005",
+      "dependencies": ["FEATURE-005-03"]
+    },
+    {
+      "id": "FEATURE-005-08",
+      "title": "Create FormLabel molecule",
+      "description": "Combine Text atom with spacing and styling in packages/ui/molecules/FormLabel/",
+      "platform": "both",
+      "status": "todo",
+      "assignee": "ui-expert",
+      "ticketRef": "FEATURE-005",
+      "dependencies": ["FEATURE-005-05"]
+    },
+    {
+      "id": "FEATURE-005-09",
+      "title": "Enhance FormField molecule",
+      "description": "Extend existing FormField to support password toggle integration",
+      "platform": "both",
+      "status": "todo",
+      "assignee": "ui-expert",
+      "ticketRef": "FEATURE-005",
+      "dependencies": ["FEATURE-005-07", "FEATURE-005-08"]
+    },
+    {
+      "id": "FEATURE-005-10",
+      "title": "Create CheckboxField molecule",
+      "description": "Combine Checkbox atom with label in packages/ui/molecules/CheckboxField/",
+      "platform": "both",
+      "status": "todo",
+      "assignee": "ui-expert",
+      "ticketRef": "FEATURE-005",
+      "dependencies": ["FEATURE-005-01", "FEATURE-005-05"]
+    },
+    {
+      "id": "FEATURE-005-11",
+      "title": "Create TextDivider molecule",
+      "description": "Combine Divider atom with centered Text in packages/ui/molecules/TextDivider/",
+      "platform": "both",
+      "status": "todo",
+      "assignee": "ui-expert",
+      "ticketRef": "FEATURE-005",
+      "dependencies": ["FEATURE-005-04", "FEATURE-005-05"]
+    },
+    {
+      "id": "FEATURE-005-12",
+      "title": "Create SocialButton molecule",
+      "description": "Combine Button atom with Icon atom in packages/ui/molecules/SocialButton/",
+      "platform": "both",
+      "status": "todo",
+      "assignee": "ui-expert",
+      "ticketRef": "FEATURE-005",
+      "dependencies": ["FEATURE-005-03"]
+    },
+    {
+      "id": "FEATURE-005-13",
+      "title": "Create LoginForm organism",
+      "description": "Compose all molecules and atoms into complete login form in packages/ui/organisms/LoginForm/",
+      "platform": "both",
+      "status": "todo",
+      "assignee": "ui-expert",
+      "ticketRef": "FEATURE-005",
+      "dependencies": ["FEATURE-005-02", "FEATURE-005-06", "FEATURE-005-09", "FEATURE-005-10", "FEATURE-005-11", "FEATURE-005-12"]
+    },
+    {
+      "id": "FEATURE-005-14",
+      "title": "Update package exports",
+      "description": "Update packages/ui/index.ts with all new component exports",
+      "platform": "both",
+      "status": "todo",
+      "assignee": "ui-expert",
+      "ticketRef": "FEATURE-005",
+      "dependencies": ["FEATURE-005-01", "FEATURE-005-02", "FEATURE-005-03", "FEATURE-005-04", "FEATURE-005-08", "FEATURE-005-10", "FEATURE-005-11", "FEATURE-005-12", "FEATURE-005-13"]
+    },
+    {
+      "id": "FEATURE-005-15",
+      "title": "Create comprehensive Storybook documentation",
+      "description": "Ensure all components have stories and create overview story",
+      "platform": "both",
+      "status": "todo",
+      "assignee": "ui-expert",
+      "ticketRef": "FEATURE-005",
+      "dependencies": ["FEATURE-005-14"]
+    },
+    {
+      "id": "FEATURE-005-16",
+      "title": "Test cross-platform compatibility",
+      "description": "Test all components on React Native and React Web",
+      "platform": "both",
+      "status": "todo",
+      "assignee": "ui-expert",
+      "ticketRef": "FEATURE-005",
+      "dependencies": ["FEATURE-005-15"]
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-10-20",
-    "totalTasks": 71,
+    "lastUpdated": "2025-10-24",
+    "totalTasks": 87,
     "completedTasks": 71
   }
 }

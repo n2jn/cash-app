@@ -19,8 +19,11 @@ export interface LoginCredentials {
   password: string
 }
 
+export type SocialProvider = 'google' | 'twitter' | 'github'
+
 export interface AuthContextValue extends AuthState {
   login: (credentials: LoginCredentials) => Promise<void>
+  loginWithSocial: (provider: SocialProvider) => Promise<void>
   logout: () => Promise<void>
   clearError: () => void
 }

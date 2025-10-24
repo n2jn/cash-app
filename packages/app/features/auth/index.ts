@@ -9,6 +9,7 @@ export type {
   ValidationResult,
   FormValidationResult,
   AuthError,
+  SocialProvider,
 } from './types'
 export { AuthErrorCode } from './types'
 

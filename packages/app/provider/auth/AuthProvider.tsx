@@ -11,6 +11,7 @@ import type {
   AuthState,
   LoginCredentials,
   User,
+  SocialProvider,
 } from '../../features/auth/types'
 import { mapAuthError } from '../../features/auth/utils/errors'
 
@@ -93,6 +94,54 @@ export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
   }, [])
 
   /**
+   * Login with social provider (Google, Twitter, GitHub)
+   * @param provider - Social authentication provider
+   * @throws Error if authentication fails
+   */
+  const loginWithSocial = useCallback(async (provider: SocialProvider) => {
+    try {
+      // Set loading state
+      setAuthState((prev) => ({
+        ...prev,
+        isLoading: true,
+        error: null,
+      }))
+
+      // TODO: Replace with actual OAuth flow
+      // This is a mock implementation for demonstration
+      await mockSocialLoginAPI(provider)
+
+      // Mock user data - replace with actual OAuth response
+      const user: User = {
+        id: `${provider}-123`,
+        email: `user@${provider}.com`,
+        name: `${provider.charAt(0).toUpperCase() + provider.slice(1)} User`,
+        avatar: `https://ui-avatars.com/api/?name=${provider}`,
+      }
+
+      // Set authenticated state
+      setAuthState({
+        user,
+        isAuthenticated: true,
+        isLoading: false,
+        error: null,
+      })
+    } catch (error) {
+      // Map error to user-friendly message
+      const authError = mapAuthError(error)
+
+      setAuthState((prev) => ({
+        ...prev,
+        isLoading: false,
+        error: authError.message,
+      }))
+
+      // Re-throw for component-level handling if needed
+      throw authError
+    }
+  }, [])
+
+  /**
    * Logout the current user
    */
   const logout = useCallback(async () => {
@@ -138,6 +187,7 @@ export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
   const value: AuthContextValue = {
     ...authState,
     login,
+    loginWithSocial,
     logout,
     clearError,
   }
@@ -190,4 +240,23 @@ const mockLoginAPI = async (
 const mockLogoutAPI = async (): Promise<void> => {
   // Simulate network delay
   await new Promise((resolve) => setTimeout(resolve, 500))
+}
+
+/**
+ * Mock social login API call
+ * Simulates OAuth flow with network delay
+ */
+const mockSocialLoginAPI = async (
+  provider: SocialProvider
+): Promise<User> => {
+  // Simulate network delay for OAuth flow
+  await new Promise((resolve) => setTimeout(resolve, 1500))
+
+  // Mock successful OAuth - in reality, this would handle OAuth tokens, redirects, etc.
+  return {
+    id: `${provider}-123`,
+    email: `user@${provider}.com`,
+    name: `${provider.charAt(0).toUpperCase() + provider.slice(1)} User`,
+    avatar: `https://ui-avatars.com/api/?name=${provider}`,
+  }
 }
