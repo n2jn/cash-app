@@ -15,14 +15,19 @@
     "@cash-app/app": "*",
     "@cash-app/ui": "*",
     "@gluestack-style/react": "^1.0.57",
+    "@gluestack-ui/core": "^3.0.10",
     "@gluestack-ui/themed": "^1.1.73",
+    "@gluestack-ui/utils": "^3.0.11",
+    "@gluestack/ui-next-adapter": "github:gluestack/ui-next-adapter",
     "cookies-next": "^4.1.0",
     "nativewind": "^4.2.1",
     "next": "^14.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-native": "^0.82.1",
+    "react-native-svg": "^15.14.0",
     "react-native-svg-web": "^1.0.9",
-    "react-native-web": "^0.19.0"
+    "react-native-web": "^0.19.13"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",

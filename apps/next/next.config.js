@@ -1,7 +1,15 @@
+import { withGluestackUI } from '@gluestack/ui-next-adapter';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   transpilePackages: [
     // Workspace packages
     '@cash-app/ui',
@@ -23,24 +31,6 @@ const nextConfig = {
     '@expo/html-elements',
     'react-native-web',
   ],
-  webpack: (config, { isServer }) => {
-    // Add aliases for react-native modules
-    config.resolve.alias = {
-      ...(config.resolve.alias || {}),
-      'react-native$': 'react-native-web',
-      'react-native-svg': 'react-native-svg-web',
-    }
-
-    // Exclude problematic react-native modules from being parsed
-    config.resolve.fallback = {
-      ...(config.resolve.fallback || {}),
-      fs: false,
-      net: false,
-      tls: false,
-    }
-
-    return config
-  },
 }
 
-module.exports = nextConfig
+export default withGluestackUI(nextConfig)

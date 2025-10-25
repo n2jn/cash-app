@@ -26,6 +26,7 @@ Analyze the feature request and launch the appropriate specialized agents in par
 2. **nextjs-expert**: Integrates features into the Next.js 14 web app in `apps/next`
 3. **expo-expert**: Integrates features into the Expo SDK 54 mobile app in `apps/mobile` with Expo Router 6
 4. **fullstack-expert**: Handles shared code, business logic, and cross-cutting concerns in `packages/app`
+5. **backend-expert**: Builds APIs, server-side logic, database schemas, and authentication/authorization
 
 ### Execution Strategy
 
@@ -36,16 +37,18 @@ Analyze the feature request and launch the appropriate specialized agents in par
    - nextjs-expert: If web integration is needed, specify the route/page/integration
    - expo-expert: If mobile integration is needed, specify the screen/route/integration
    - fullstack-expert: If shared logic/utilities are needed, describe the functionality
+   - backend-expert: If APIs/database/authentication are needed, specify the endpoints and data requirements
 
 4. **Wait for all agents to complete** and then summarize the results
 
 ### Example Agent Launch
 
 For a login feature:
+- **backend-expert**: Create authentication API endpoints (POST /api/auth/login, POST /api/auth/register), JWT token generation, password hashing
 - **ui-expert**: Create LoginForm, Input, Button components using Gluestack UI + NativeWind
+- **fullstack-expert**: Create authentication utilities, providers, and API client in packages/app
 - **nextjs-expert**: Create /login page in Next.js 14 app using the LoginForm
 - **expo-expert**: Create login screen in Expo mobile app using Expo Router 6 file-based routing
-- **fullstack-expert**: Create authentication utilities, providers, and API client in packages/app
 
 ### Mobile Development Notes
 
