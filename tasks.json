@@ -29,7 +29,10 @@
       "status": "done",
       "assignee": "ui-expert",
       "ticketRef": "FEATURE-001",
-      "dependencies": ["FEATURE-001-01", "FEATURE-001-02"]
+      "dependencies": [
+        "FEATURE-001-01",
+        "FEATURE-001-02"
+      ]
     },
     {
       "id": "FEATURE-001-04",
@@ -39,7 +42,10 @@
       "status": "done",
       "assignee": "ui-expert",
       "ticketRef": "FEATURE-001",
-      "dependencies": ["FEATURE-001-01", "FEATURE-001-02"]
+      "dependencies": [
+        "FEATURE-001-01",
+        "FEATURE-001-02"
+      ]
     },
     {
       "id": "FEATURE-001-05",
@@ -49,7 +55,10 @@
       "status": "done",
       "assignee": "ui-expert",
       "ticketRef": "FEATURE-001",
-      "dependencies": ["FEATURE-001-03", "FEATURE-001-04"]
+      "dependencies": [
+        "FEATURE-001-03",
+        "FEATURE-001-04"
+      ]
     },
     {
       "id": "FEATURE-001-06",
@@ -59,7 +68,9 @@
       "status": "done",
       "assignee": "ui-expert",
       "ticketRef": "FEATURE-001",
-      "dependencies": ["FEATURE-001-05"]
+      "dependencies": [
+        "FEATURE-001-05"
+      ]
     },
     {
       "id": "FEATURE-001-07",
@@ -69,7 +80,10 @@
       "status": "done",
       "assignee": "ui-expert",
       "ticketRef": "FEATURE-001",
-      "dependencies": ["FEATURE-001-03", "FEATURE-001-04"]
+      "dependencies": [
+        "FEATURE-001-03",
+        "FEATURE-001-04"
+      ]
     },
     {
       "id": "FEATURE-001-08",
@@ -79,7 +93,9 @@
       "status": "done",
       "assignee": "ui-expert",
       "ticketRef": "FEATURE-001",
-      "dependencies": ["FEATURE-001-07"]
+      "dependencies": [
+        "FEATURE-001-07"
+      ]
     },
     {
       "id": "FEATURE-001-09",
@@ -89,7 +105,10 @@
       "status": "done",
       "assignee": "ui-expert",
       "ticketRef": "FEATURE-001",
-      "dependencies": ["FEATURE-001-05", "FEATURE-001-07"]
+      "dependencies": [
+        "FEATURE-001-05",
+        "FEATURE-001-07"
+      ]
     },
     {
       "id": "FEATURE-001-10",
@@ -99,7 +118,9 @@
       "status": "done",
       "assignee": "ui-expert",
       "ticketRef": "FEATURE-001",
-      "dependencies": ["FEATURE-001-09"]
+      "dependencies": [
+        "FEATURE-001-09"
+      ]
     },
     {
       "id": "FEATURE-001-11",
@@ -109,7 +130,10 @@
       "status": "done",
       "assignee": "ui-expert",
       "ticketRef": "FEATURE-001",
-      "dependencies": ["FEATURE-001-03", "FEATURE-001-04"]
+      "dependencies": [
+        "FEATURE-001-03",
+        "FEATURE-001-04"
+      ]
     },
     {
       "id": "FEATURE-001-12",
@@ -119,7 +143,9 @@
       "status": "done",
       "assignee": "ui-expert",
       "ticketRef": "FEATURE-001",
-      "dependencies": ["FEATURE-001-11"]
+      "dependencies": [
+        "FEATURE-001-11"
+      ]
     },
     {
       "id": "FEATURE-001-13",
@@ -129,7 +155,12 @@
       "status": "done",
       "assignee": "ui-expert",
       "ticketRef": "FEATURE-001",
-      "dependencies": ["FEATURE-001-05", "FEATURE-001-07", "FEATURE-001-09", "FEATURE-001-11"]
+      "dependencies": [
+        "FEATURE-001-05",
+        "FEATURE-001-07",
+        "FEATURE-001-09",
+        "FEATURE-001-11"
+      ]
     },
     {
       "id": "FEATURE-001-14",
@@ -139,7 +170,12 @@
       "status": "done",
       "assignee": "ui-expert",
       "ticketRef": "FEATURE-001",
-      "dependencies": ["FEATURE-001-06", "FEATURE-001-08", "FEATURE-001-10", "FEATURE-001-12"]
+      "dependencies": [
+        "FEATURE-001-06",
+        "FEATURE-001-08",
+        "FEATURE-001-10",
+        "FEATURE-001-12"
+      ]
     },
     {
       "id": "FEATURE-001-15",
@@ -149,7 +185,12 @@
       "status": "done",
       "assignee": "ui-expert",
       "ticketRef": "FEATURE-001",
-      "dependencies": ["FEATURE-001-06", "FEATURE-001-08", "FEATURE-001-10", "FEATURE-001-12"]
+      "dependencies": [
+        "FEATURE-001-06",
+        "FEATURE-001-08",
+        "FEATURE-001-10",
+        "FEATURE-001-12"
+      ]
     },
     {
       "id": "FEATURE-002-01",
@@ -189,7 +230,12 @@
       "status": "done",
       "assignee": "fullstack-expert",
       "ticketRef": "FEATURE-002",
-      "dependencies": ["FEATURE-001-13", "FEATURE-002-01", "FEATURE-002-02", "FEATURE-002-03"]
+      "dependencies": [
+        "FEATURE-001-13",
+        "FEATURE-002-01",
+        "FEATURE-002-02",
+        "FEATURE-002-03"
+      ]
     },
     {
       "id": "FEATURE-002-05",
@@ -199,7 +245,9 @@
       "status": "done",
       "assignee": "fullstack-expert",
       "ticketRef": "FEATURE-002",
-      "dependencies": ["FEATURE-002-04"]
+      "dependencies": [
+        "FEATURE-002-04"
+      ]
     },
     {
       "id": "FEATURE-002-06",
@@ -209,7 +257,9 @@
       "status": "done",
       "assignee": "fullstack-expert",
       "ticketRef": "FEATURE-002",
-      "dependencies": ["FEATURE-002-04"]
+      "dependencies": [
+        "FEATURE-002-04"
+      ]
     },
     {
       "id": "FEATURE-002-07",
@@ -219,7 +269,9 @@
       "status": "done",
       "assignee": "fullstack-expert",
       "ticketRef": "FEATURE-002",
-      "dependencies": ["FEATURE-002-04"]
+      "dependencies": [
+        "FEATURE-002-04"
+      ]
     },
     {
       "id": "FEATURE-002-08",
@@ -229,7 +281,10 @@
       "status": "done",
       "assignee": "fullstack-expert",
       "ticketRef": "FEATURE-002",
-      "dependencies": ["FEATURE-002-05", "FEATURE-002-06"]
+      "dependencies": [
+        "FEATURE-002-05",
+        "FEATURE-002-06"
+      ]
     },
     {
       "id": "FEATURE-002-09",
@@ -239,7 +294,10 @@
       "status": "done",
       "assignee": "fullstack-expert",
       "ticketRef": "FEATURE-002",
-      "dependencies": ["FEATURE-002-05", "FEATURE-002-06"]
+      "dependencies": [
+        "FEATURE-002-05",
+        "FEATURE-002-06"
+      ]
     },
     {
       "id": "FEATURE-003-01",
@@ -249,7 +307,9 @@
       "status": "done",
       "assignee": "expo-expert",
       "ticketRef": "FEATURE-003",
-      "dependencies": ["FEATURE-001-13"]
+      "dependencies": [
+        "FEATURE-001-13"
+      ]
     },
     {
       "id": "FEATURE-003-02",
@@ -259,7 +319,9 @@
       "status": "done",
       "assignee": "expo-expert",
       "ticketRef": "FEATURE-003",
-      "dependencies": ["FEATURE-002-01"]
+      "dependencies": [
+        "FEATURE-002-01"
+      ]
     },
     {
       "id": "FEATURE-003-03",
@@ -269,7 +331,10 @@
       "status": "done",
       "assignee": "expo-expert",
       "ticketRef": "FEATURE-003",
-      "dependencies": ["FEATURE-003-01", "FEATURE-003-02"]
+      "dependencies": [
+        "FEATURE-003-01",
+        "FEATURE-003-02"
+      ]
     },
     {
       "id": "FEATURE-003-04",
@@ -279,7 +344,10 @@
       "status": "done",
       "assignee": "expo-expert",
       "ticketRef": "FEATURE-003",
-      "dependencies": ["FEATURE-002-04", "FEATURE-003-03"]
+      "dependencies": [
+        "FEATURE-002-04",
+        "FEATURE-003-03"
+      ]
     },
     {
       "id": "FEATURE-003-05",
@@ -289,7 +357,9 @@
       "status": "done",
       "assignee": "expo-expert",
       "ticketRef": "FEATURE-003",
-      "dependencies": ["FEATURE-003-04"]
+      "dependencies": [
+        "FEATURE-003-04"
+      ]
     },
     {
       "id": "FEATURE-003-06",
@@ -299,7 +369,9 @@
       "status": "done",
       "assignee": "expo-expert",
       "ticketRef": "FEATURE-003",
-      "dependencies": ["FEATURE-003-04"]
+      "dependencies": [
+        "FEATURE-003-04"
+      ]
     },
     {
       "id": "FEATURE-003-07",
@@ -309,7 +381,9 @@
       "status": "done",
       "assignee": "expo-expert",
       "ticketRef": "FEATURE-003",
-      "dependencies": ["FEATURE-003-04"]
+      "dependencies": [
+        "FEATURE-003-04"
+      ]
     },
     {
       "id": "FEATURE-003-08",
@@ -319,7 +393,9 @@
       "status": "done",
       "assignee": "expo-expert",
       "ticketRef": "FEATURE-003",
-      "dependencies": ["FEATURE-003-04"]
+      "dependencies": [
+        "FEATURE-003-04"
+      ]
     },
     {
       "id": "FEATURE-003-09",
@@ -329,7 +405,9 @@
       "status": "done",
       "assignee": "expo-expert",
       "ticketRef": "FEATURE-003",
-      "dependencies": ["FEATURE-003-02"]
+      "dependencies": [
+        "FEATURE-003-02"
+      ]
     },
     {
       "id": "FEATURE-003-10",
@@ -339,7 +417,13 @@
       "status": "done",
       "assignee": "expo-expert",
       "ticketRef": "FEATURE-003",
-      "dependencies": ["FEATURE-003-05", "FEATURE-003-06", "FEATURE-003-07", "FEATURE-003-08", "FEATURE-003-09"]
+      "dependencies": [
+        "FEATURE-003-05",
+        "FEATURE-003-06",
+        "FEATURE-003-07",
+        "FEATURE-003-08",
+        "FEATURE-003-09"
+      ]
     },
     {
       "id": "FEATURE-003-11",
@@ -349,7 +433,13 @@
       "status": "done",
       "assignee": "expo-expert",
       "ticketRef": "FEATURE-003",
-      "dependencies": ["FEATURE-003-05", "FEATURE-003-06", "FEATURE-003-07", "FEATURE-003-08", "FEATURE-003-09"]
+      "dependencies": [
+        "FEATURE-003-05",
+        "FEATURE-003-06",
+        "FEATURE-003-07",
+        "FEATURE-003-08",
+        "FEATURE-003-09"
+      ]
     },
     {
       "id": "FEATURE-004-01",
@@ -359,7 +449,9 @@
       "status": "done",
       "assignee": "nextjs-expert",
       "ticketRef": "FEATURE-004",
-      "dependencies": ["FEATURE-001-13"]
+      "dependencies": [
+        "FEATURE-001-13"
+      ]
     },
     {
       "id": "FEATURE-004-02",
@@ -369,7 +461,9 @@
       "status": "done",
       "assignee": "nextjs-expert",
       "ticketRef": "FEATURE-004",
-      "dependencies": ["FEATURE-002-01"]
+      "dependencies": [
+        "FEATURE-002-01"
+      ]
     },
     {
       "id": "FEATURE-004-03",
@@ -379,7 +473,11 @@
       "status": "done",
       "assignee": "nextjs-expert",
       "ticketRef": "FEATURE-004",
-      "dependencies": ["FEATURE-002-04", "FEATURE-004-01", "FEATURE-004-02"]
+      "dependencies": [
+        "FEATURE-002-04",
+        "FEATURE-004-01",
+        "FEATURE-004-02"
+      ]
     },
     {
       "id": "FEATURE-004-04",
@@ -389,7 +487,9 @@
       "status": "done",
       "assignee": "nextjs-expert",
       "ticketRef": "FEATURE-004",
-      "dependencies": ["FEATURE-004-03"]
+      "dependencies": [
+        "FEATURE-004-03"
+      ]
     },
     {
       "id": "FEATURE-004-05",
@@ -399,7 +499,9 @@
       "status": "done",
       "assignee": "nextjs-expert",
       "ticketRef": "FEATURE-004",
-      "dependencies": ["FEATURE-004-03"]
+      "dependencies": [
+        "FEATURE-004-03"
+      ]
     },
     {
       "id": "FEATURE-004-06",
@@ -409,7 +511,9 @@
       "status": "done",
       "assignee": "nextjs-expert",
       "ticketRef": "FEATURE-004",
-      "dependencies": ["FEATURE-004-02"]
+      "dependencies": [
+        "FEATURE-004-02"
+      ]
     },
     {
       "id": "FEATURE-004-07",
@@ -419,7 +523,9 @@
       "status": "done",
       "assignee": "nextjs-expert",
       "ticketRef": "FEATURE-004",
-      "dependencies": ["FEATURE-004-02"]
+      "dependencies": [
+        "FEATURE-004-02"
+      ]
     },
     {
       "id": "FEATURE-004-08",
@@ -429,7 +535,9 @@
       "status": "done",
       "assignee": "nextjs-expert",
       "ticketRef": "FEATURE-004",
-      "dependencies": ["FEATURE-004-05"]
+      "dependencies": [
+        "FEATURE-004-05"
+      ]
     },
     {
       "id": "FEATURE-004-09",
@@ -439,7 +547,11 @@
       "status": "done",
       "assignee": "nextjs-expert",
       "ticketRef": "FEATURE-004",
-      "dependencies": ["FEATURE-004-03", "FEATURE-004-06", "FEATURE-004-07"]
+      "dependencies": [
+        "FEATURE-004-03",
+        "FEATURE-004-06",
+        "FEATURE-004-07"
+      ]
     },
     {
       "id": "FEATURE-004-10",
@@ -449,7 +561,9 @@
       "status": "done",
       "assignee": "nextjs-expert",
       "ticketRef": "FEATURE-004",
-      "dependencies": ["FEATURE-004-03"]
+      "dependencies": [
+        "FEATURE-004-03"
+      ]
     },
     {
       "id": "FEATURE-004-11",
@@ -459,7 +573,9 @@
       "status": "done",
       "assignee": "nextjs-expert",
       "ticketRef": "FEATURE-004",
-      "dependencies": ["FEATURE-004-03"]
+      "dependencies": [
+        "FEATURE-004-03"
+      ]
     },
     {
       "id": "FEATURE-005-01",
@@ -529,7 +645,9 @@
       "status": "todo",
       "assignee": "ui-expert",
       "ticketRef": "FEATURE-005",
-      "dependencies": ["FEATURE-005-03"]
+      "dependencies": [
+        "FEATURE-005-03"
+      ]
     },
     {
       "id": "FEATURE-005-08",
@@ -539,7 +657,9 @@
       "status": "todo",
       "assignee": "ui-expert",
       "ticketRef": "FEATURE-005",
-      "dependencies": ["FEATURE-005-05"]
+      "dependencies": [
+        "FEATURE-005-05"
+      ]
     },
     {
       "id": "FEATURE-005-09",
@@ -549,7 +669,10 @@
       "status": "todo",
       "assignee": "ui-expert",
       "ticketRef": "FEATURE-005",
-      "dependencies": ["FEATURE-005-07", "FEATURE-005-08"]
+      "dependencies": [
+        "FEATURE-005-07",
+        "FEATURE-005-08"
+      ]
     },
     {
       "id": "FEATURE-005-10",
@@ -559,7 +682,10 @@
       "status": "todo",
       "assignee": "ui-expert",
       "ticketRef": "FEATURE-005",
-      "dependencies": ["FEATURE-005-01", "FEATURE-005-05"]
+      "dependencies": [
+        "FEATURE-005-01",
+        "FEATURE-005-05"
+      ]
     },
     {
       "id": "FEATURE-005-11",
@@ -569,7 +695,10 @@
       "status": "todo",
       "assignee": "ui-expert",
       "ticketRef": "FEATURE-005",
-      "dependencies": ["FEATURE-005-04", "FEATURE-005-05"]
+      "dependencies": [
+        "FEATURE-005-04",
+        "FEATURE-005-05"
+      ]
     },
     {
       "id": "FEATURE-005-12",
@@ -579,7 +708,9 @@
       "status": "todo",
       "assignee": "ui-expert",
       "ticketRef": "FEATURE-005",
-      "dependencies": ["FEATURE-005-03"]
+      "dependencies": [
+        "FEATURE-005-03"
+      ]
     },
     {
       "id": "FEATURE-005-13",
@@ -589,7 +720,14 @@
       "status": "todo",
       "assignee": "ui-expert",
       "ticketRef": "FEATURE-005",
-      "dependencies": ["FEATURE-005-02", "FEATURE-005-06", "FEATURE-005-09", "FEATURE-005-10", "FEATURE-005-11", "FEATURE-005-12"]
+      "dependencies": [
+        "FEATURE-005-02",
+        "FEATURE-005-06",
+        "FEATURE-005-09",
+        "FEATURE-005-10",
+        "FEATURE-005-11",
+        "FEATURE-005-12"
+      ]
     },
     {
       "id": "FEATURE-005-14",
@@ -599,7 +737,17 @@
       "status": "todo",
       "assignee": "ui-expert",
       "ticketRef": "FEATURE-005",
-      "dependencies": ["FEATURE-005-01", "FEATURE-005-02", "FEATURE-005-03", "FEATURE-005-04", "FEATURE-005-08", "FEATURE-005-10", "FEATURE-005-11", "FEATURE-005-12", "FEATURE-005-13"]
+      "dependencies": [
+        "FEATURE-005-01",
+        "FEATURE-005-02",
+        "FEATURE-005-03",
+        "FEATURE-005-04",
+        "FEATURE-005-08",
+        "FEATURE-005-10",
+        "FEATURE-005-11",
+        "FEATURE-005-12",
+        "FEATURE-005-13"
+      ]
     },
     {
       "id": "FEATURE-005-15",
@@ -609,7 +757,9 @@
       "status": "todo",
       "assignee": "ui-expert",
       "ticketRef": "FEATURE-005",
-      "dependencies": ["FEATURE-005-14"]
+      "dependencies": [
+        "FEATURE-005-14"
+      ]
     },
     {
       "id": "FEATURE-005-16",
@@ -619,12 +769,434 @@
       "status": "todo",
       "assignee": "ui-expert",
       "ticketRef": "FEATURE-005",
-      "dependencies": ["FEATURE-005-15"]
+      "dependencies": [
+        "FEATURE-005-15"
+      ]
+    },
+    {
+      "id": "FEATURE-006-01",
+      "title": "Create backend directory structure and initialize npm package",
+      "description": "Set up apps/backend with package.json, workspace config, and initial directory structure",
+      "platform": "backend",
+      "status": "done",
+      "assignee": "backend-expert",
+      "ticketRef": "FEATURE-006",
+      "dependencies": []
+    },
+    {
+      "id": "FEATURE-006-02",
+      "title": "Configure TypeScript with strict mode",
+      "description": "Set up tsconfig.json with strict type checking and proper compiler options",
+      "platform": "backend",
+      "status": "done",
+      "assignee": "backend-expert",
+      "ticketRef": "FEATURE-006",
+      "dependencies": [
+        "FEATURE-006-01"
+      ]
+    },
+    {
+      "id": "FEATURE-006-03",
+      "title": "Configure ESLint and Prettier",
+      "description": "Set up code quality tools with TypeScript support",
+      "platform": "backend",
+      "status": "done",
+      "assignee": "backend-expert",
+      "ticketRef": "FEATURE-006",
+      "dependencies": [
+        "FEATURE-006-02"
+      ]
+    },
+    {
+      "id": "FEATURE-006-04",
+      "title": "Set up development tooling",
+      "description": "Configure nodemon, build scripts, and hot reload",
+      "platform": "backend",
+      "status": "done",
+      "assignee": "backend-expert",
+      "ticketRef": "FEATURE-006",
+      "dependencies": [
+        "FEATURE-006-02"
+      ]
+    },
+    {
+      "id": "FEATURE-006-05",
+      "title": "Create Clean Architecture folder structure",
+      "description": "Set up domain, application, infrastructure, and presentation layer directories",
+      "platform": "backend",
+      "status": "done",
+      "assignee": "backend-expert",
+      "ticketRef": "FEATURE-006",
+      "dependencies": [
+        "FEATURE-006-01"
+      ]
+    },
+    {
+      "id": "FEATURE-006-06",
+      "title": "Implement domain layer",
+      "description": "Create example entity, interfaces, and value objects in domain layer",
+      "platform": "backend",
+      "status": "done",
+      "assignee": "backend-expert",
+      "ticketRef": "FEATURE-006",
+      "dependencies": [
+        "FEATURE-006-05"
+      ]
+    },
+    {
+      "id": "FEATURE-006-07",
+      "title": "Implement application layer",
+      "description": "Create use cases and DTOs for example feature",
+      "platform": "backend",
+      "status": "done",
+      "assignee": "backend-expert",
+      "ticketRef": "FEATURE-006",
+      "dependencies": [
+        "FEATURE-006-06"
+      ]
+    },
+    {
+      "id": "FEATURE-006-08",
+      "title": "Implement infrastructure layer",
+      "description": "Create in-memory repository, database config, and environment setup",
+      "platform": "backend",
+      "status": "done",
+      "assignee": "backend-expert",
+      "ticketRef": "FEATURE-006",
+      "dependencies": [
+        "FEATURE-006-06"
+      ]
+    },
+    {
+      "id": "FEATURE-006-09",
+      "title": "Set up Express server",
+      "description": "Install Express, configure server entry point, and basic app setup",
+      "platform": "backend",
+      "status": "done",
+      "assignee": "backend-expert",
+      "ticketRef": "FEATURE-006",
+      "dependencies": [
+        "FEATURE-006-02",
+        "FEATURE-006-05"
+      ]
+    },
+    {
+      "id": "FEATURE-006-10",
+      "title": "Implement error handling middleware",
+      "description": "Create global error handler, 404 handler, and validation error formatter",
+      "platform": "backend",
+      "status": "done",
+      "assignee": "backend-expert",
+      "ticketRef": "FEATURE-006",
+      "dependencies": [
+        "FEATURE-006-09"
+      ]
+    },
+    {
+      "id": "FEATURE-006-11",
+      "title": "Implement logging middleware",
+      "description": "Create request/error logger with Winston or Pino",
+      "platform": "backend",
+      "status": "done",
+      "assignee": "backend-expert",
+      "ticketRef": "FEATURE-006",
+      "dependencies": [
+        "FEATURE-006-09"
+      ]
+    },
+    {
+      "id": "FEATURE-006-12",
+      "title": "Configure security middleware",
+      "description": "Set up helmet.js, CORS, rate limiting, and security headers",
+      "platform": "backend",
+      "status": "done",
+      "assignee": "backend-expert",
+      "ticketRef": "FEATURE-006",
+      "dependencies": [
+        "FEATURE-006-09"
+      ]
+    },
+    {
+      "id": "FEATURE-006-13",
+      "title": "Implement presentation layer controllers",
+      "description": "Create controller for example feature with proper error handling",
+      "platform": "backend",
+      "status": "done",
+      "assignee": "backend-expert",
+      "ticketRef": "FEATURE-006",
+      "dependencies": [
+        "FEATURE-006-07",
+        "FEATURE-006-08"
+      ]
+    },
+    {
+      "id": "FEATURE-006-14",
+      "title": "Create Express routes and validators",
+      "description": "Set up routes with request validation using Zod or class-validator",
+      "platform": "backend",
+      "status": "done",
+      "assignee": "backend-expert",
+      "ticketRef": "FEATURE-006",
+      "dependencies": [
+        "FEATURE-006-13"
+      ]
+    },
+    {
+      "id": "FEATURE-006-15",
+      "title": "Implement dummy API endpoints",
+      "description": "Create health check and example CRUD endpoints to demonstrate architecture",
+      "platform": "backend",
+      "status": "done",
+      "assignee": "backend-expert",
+      "ticketRef": "FEATURE-006",
+      "dependencies": [
+        "FEATURE-006-14",
+        "FEATURE-006-10",
+        "FEATURE-006-11",
+        "FEATURE-006-12"
+      ]
+    },
+    {
+      "id": "FEATURE-006-16",
+      "title": "Write comprehensive documentation",
+      "description": "Create README.md, ARCHITECTURE.md, API documentation, and .env.example",
+      "platform": "backend",
+      "status": "done",
+      "assignee": "backend-expert",
+      "ticketRef": "FEATURE-006",
+      "dependencies": [
+        "FEATURE-006-15"
+      ]
+    },
+    {
+      "id": "FEATURE-006-17",
+      "title": "Add backend scripts to root package.json",
+      "description": "Configure npm run dev:backend, build:backend, lint:backend, and test:backend",
+      "platform": "backend",
+      "status": "done",
+      "assignee": "backend-expert",
+      "ticketRef": "FEATURE-006",
+      "dependencies": [
+        "FEATURE-006-04"
+      ]
+    },
+    {
+      "id": "FEATURE-006-18",
+      "title": "Test and validate backend implementation",
+      "description": "Test server startup, API endpoints, error handling, logging, and tooling",
+      "platform": "backend",
+      "status": "done",
+      "assignee": "backend-expert",
+      "ticketRef": "FEATURE-006",
+      "dependencies": [
+        "FEATURE-006-15",
+        "FEATURE-006-16",
+        "FEATURE-006-17"
+      ]
+    },
+    {
+      "id": "FEATURE-007-01",
+      "title": "Install Swagger dependencies",
+      "description": "Install swagger-ui-express, swagger-jsdoc, and type definitions",
+      "platform": "backend",
+      "status": "done",
+      "assignee": "backend-expert",
+      "ticketRef": "FEATURE-007",
+      "dependencies": []
+    },
+    {
+      "id": "FEATURE-007-02",
+      "title": "Create Swagger configuration",
+      "description": "Create swagger.config.ts with OpenAPI 3.0 base configuration",
+      "platform": "backend",
+      "status": "done",
+      "assignee": "backend-expert",
+      "ticketRef": "FEATURE-007",
+      "dependencies": [
+        "FEATURE-007-01"
+      ]
+    },
+    {
+      "id": "FEATURE-007-03",
+      "title": "Create reusable schemas",
+      "description": "Define User, Error, HealthCheck, and validation error schemas in swagger-schemas.ts",
+      "platform": "backend",
+      "status": "done",
+      "assignee": "backend-expert",
+      "ticketRef": "FEATURE-007",
+      "dependencies": [
+        "FEATURE-007-02"
+      ]
+    },
+    {
+      "id": "FEATURE-007-04",
+      "title": "Document health check endpoint",
+      "description": "Add OpenAPI JSDoc comments to GET /api/health endpoint",
+      "platform": "backend",
+      "status": "done",
+      "assignee": "backend-expert",
+      "ticketRef": "FEATURE-007",
+      "dependencies": [
+        "FEATURE-007-03"
+      ]
+    },
+    {
+      "id": "FEATURE-007-05",
+      "title": "Document POST /api/users endpoint",
+      "description": "Add OpenAPI JSDoc for creating users with request/response schemas",
+      "platform": "backend",
+      "status": "done",
+      "assignee": "backend-expert",
+      "ticketRef": "FEATURE-007",
+      "dependencies": [
+        "FEATURE-007-03"
+      ]
+    },
+    {
+      "id": "FEATURE-007-06",
+      "title": "Document GET /api/users endpoint",
+      "description": "Add OpenAPI JSDoc for getting all users with response schema",
+      "platform": "backend",
+      "status": "done",
+      "assignee": "backend-expert",
+      "ticketRef": "FEATURE-007",
+      "dependencies": [
+        "FEATURE-007-03"
+      ]
+    },
+    {
+      "id": "FEATURE-007-07",
+      "title": "Document GET /api/users/:id endpoint",
+      "description": "Add OpenAPI JSDoc for getting user by ID with path parameter and response schemas",
+      "platform": "backend",
+      "status": "done",
+      "assignee": "backend-expert",
+      "ticketRef": "FEATURE-007",
+      "dependencies": [
+        "FEATURE-007-03"
+      ]
+    },
+    {
+      "id": "FEATURE-007-08",
+      "title": "Document PUT /api/users/:id endpoint",
+      "description": "Add OpenAPI JSDoc for updating user with request/response schemas",
+      "platform": "backend",
+      "status": "done",
+      "assignee": "backend-expert",
+      "ticketRef": "FEATURE-007",
+      "dependencies": [
+        "FEATURE-007-03"
+      ]
+    },
+    {
+      "id": "FEATURE-007-09",
+      "title": "Document DELETE /api/users/:id endpoint",
+      "description": "Add OpenAPI JSDoc for deleting user with response schemas",
+      "platform": "backend",
+      "status": "done",
+      "assignee": "backend-expert",
+      "ticketRef": "FEATURE-007",
+      "dependencies": [
+        "FEATURE-007-03"
+      ]
+    },
+    {
+      "id": "FEATURE-007-10",
+      "title": "Integrate Swagger middleware",
+      "description": "Add Swagger UI middleware to Express app at /api-docs route",
+      "platform": "backend",
+      "status": "done",
+      "assignee": "backend-expert",
+      "ticketRef": "FEATURE-007",
+      "dependencies": [
+        "FEATURE-007-02",
+        "FEATURE-007-04",
+        "FEATURE-007-05",
+        "FEATURE-007-06",
+        "FEATURE-007-07",
+        "FEATURE-007-08",
+        "FEATURE-007-09"
+      ]
+    },
+    {
+      "id": "FEATURE-007-11",
+      "title": "Add security definitions",
+      "description": "Define Bearer authentication scheme in OpenAPI spec for future JWT implementation",
+      "platform": "backend",
+      "status": "done",
+      "assignee": "backend-expert",
+      "ticketRef": "FEATURE-007",
+      "dependencies": [
+        "FEATURE-007-02"
+      ]
+    },
+    {
+      "id": "FEATURE-007-12",
+      "title": "Update README with API documentation section",
+      "description": "Add API Documentation section to README.md with Swagger UI link and instructions",
+      "platform": "backend",
+      "status": "done",
+      "assignee": "backend-expert",
+      "ticketRef": "FEATURE-007",
+      "dependencies": [
+        "FEATURE-007-10"
+      ]
+    },
+    {
+      "id": "FEATURE-007-13",
+      "title": "Create SWAGGER.md documentation guide",
+      "description": "Create guide for adding documentation to new endpoints with examples and best practices",
+      "platform": "backend",
+      "status": "done",
+      "assignee": "backend-expert",
+      "ticketRef": "FEATURE-007",
+      "dependencies": [
+        "FEATURE-007-10"
+      ]
+    },
+    {
+      "id": "FEATURE-007-14",
+      "title": "Test Swagger UI functionality",
+      "description": "Verify Swagger UI loads, all endpoints documented, and Try it out feature works",
+      "platform": "backend",
+      "status": "done",
+      "assignee": "backend-expert",
+      "ticketRef": "FEATURE-007",
+      "dependencies": [
+        "FEATURE-007-10",
+        "FEATURE-007-11",
+        "FEATURE-007-12",
+        "FEATURE-007-13"
+      ]
+    },
+    {
+      "id": "FEATURE-007-15",
+      "title": "Validate OpenAPI specification",
+      "description": "Validate OpenAPI spec at swagger.io editor and ensure compliance",
+      "platform": "backend",
+      "status": "done",
+      "assignee": "backend-expert",
+      "ticketRef": "FEATURE-007",
+      "dependencies": [
+        "FEATURE-007-14"
+      ]
+    },
+    {
+      "id": "FEATURE-007-16",
+      "title": "Run code quality checks",
+      "description": "Run type-check and lint to ensure code follows project standards",
+      "platform": "backend",
+      "status": "done",
+      "assignee": "backend-expert",
+      "ticketRef": "FEATURE-007",
+      "dependencies": [
+        "FEATURE-007-14"
+      ]
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-10-24",
-    "totalTasks": 87,
-    "completedTasks": 71
+    "lastUpdated": "2025-10-25",
+    "totalTasks": 121,
+    "completedTasks": 80
   }
 }

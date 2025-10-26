@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "FEATURE-002.md",
-                "mode": "source",
+                "file": "FEATURE-007.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "FEATURE-002"
+              "title": "FEATURE-007"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "FEATURE-002.md",
+                "file": "FEATURE-006.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for FEATURE-002"
+              "title": "Backlinks for FEATURE-006"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "FEATURE-002.md",
+                "file": "FEATURE-006.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from FEATURE-002"
+              "title": "Outgoing links from FEATURE-006"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "FEATURE-002.md",
+                "file": "FEATURE-006.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of FEATURE-002"
+              "title": "Outline of FEATURE-006"
             }
           }
         ]
@@ -171,11 +171,13 @@
   },
   "active": "487740f2a3191003",
   "lastOpenFiles": [
+    "FEATURE-007.md.tmp.32878.1761405124550",
+    "FEATURE-006.md",
     "FEATURE-005-COMPONENT-SPEC.md",
+    "FEATURE-002.md",
     "FEATURE-005.md",
     "FEATURE-001.md",
     "README.md",
-    "FEATURE-002.md",
     "FEATURE-004.md.tmp.28824.1760909179314",
     "FEATURE-004.md.tmp.28824.1760909164818",
     "FEATURE-004.md.tmp.28824.1760909157184",

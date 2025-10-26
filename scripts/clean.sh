@@ -7,12 +7,14 @@
 #   npm run clean               # Clean root only
 #   npm run clean:mobile        # Clean mobile app
 #   npm run clean:next          # Clean next app
+#   npm run clean:backend       # Clean backend app
 #   npm run clean:all           # Clean everything
 #
 # Direct usage:
 #   ./scripts/clean.sh                    # Clean root only
 #   ./scripts/clean.sh mobile             # Clean mobile app
 #   ./scripts/clean.sh next               # Clean next app
+#   ./scripts/clean.sh backend            # Clean backend app
 #   ./scripts/clean.sh all                # Clean everything
 #   ./scripts/clean.sh mobile --quick     # Clean mobile (skip pod install)
 #   ./scripts/clean.sh mobile --ios       # Clean iOS only
@@ -56,6 +58,12 @@ case "$WORKSPACE" in
     HAS_IOS=false
     HAS_ANDROID=false
     ;;
+  backend)
+    WORKSPACE_DIR="$ROOT_DIR/apps/backend"
+    WORKSPACE_NAME="Backend App"
+    HAS_IOS=false
+    HAS_ANDROID=false
+    ;;
   storybook)
     WORKSPACE_DIR="$ROOT_DIR/apps/storybook"
     WORKSPACE_NAME="Storybook"
@@ -93,6 +101,7 @@ case "$WORKSPACE" in
     echo "  - root       (root dependencies only)"
     echo "  - mobile     (mobile app)"
     echo "  - next       (Next.js app)"
+    echo "  - backend    (backend app)"
     echo "  - storybook  (Storybook)"
     echo "  - ui         (UI package)"
     echo "  - app        (App package)"
@@ -288,6 +297,32 @@ clean_watchman() {
   echo ""
 }
 
+clean_backend_cache() {
+  local target_dir="$1"
+
+  echo -e "${BLUE}🔧 Cleaning Backend cache...${NC}"
+
+  if [ -d "$target_dir/dist" ]; then
+    echo "   Removing dist directory"
+    rm -rf "$target_dir/dist"
+    echo -e "   ${GREEN}✓${NC} dist cache cleaned"
+  fi
+
+  if [ -d "$target_dir/build" ]; then
+    echo "   Removing build directory"
+    rm -rf "$target_dir/build"
+    echo -e "   ${GREEN}✓${NC} build directory cleaned"
+  fi
+
+  if [ -d "$target_dir/logs" ]; then
+    echo "   Removing logs directory"
+    rm -rf "$target_dir/logs"
+    echo -e "   ${GREEN}✓${NC} logs directory cleaned"
+  fi
+
+  echo ""
+}
+
 install_deps() {
   echo -e "${BLUE}📥 Installing dependencies...${NC}"
 
@@ -347,12 +382,16 @@ if [ "$WORKSPACE" == "all" ]; then
   clean_package_lock
 
   # Clean all apps
-  for app in mobile next storybook; do
+  for app in mobile next backend storybook; do
     if [ -d "$ROOT_DIR/apps/$app" ]; then
       clean_node_modules "$ROOT_DIR/apps/$app" "apps/$app"
 
       if [ "$app" == "next" ]; then
         clean_next_cache "$ROOT_DIR/apps/$app"
+      fi
+
+      if [ "$app" == "backend" ]; then
+        clean_backend_cache "$ROOT_DIR/apps/$app"
       fi
 
       if [ "$app" == "mobile" ]; then
@@ -428,6 +467,10 @@ else
       clean_next_cache "$WORKSPACE_DIR"
     fi
 
+    if [ "$WORKSPACE" == "backend" ]; then
+      clean_backend_cache "$WORKSPACE_DIR"
+    fi
+
     if [ "$HAS_IOS" = true ]; then
       clean_ios "$WORKSPACE_DIR"
     fi
@@ -464,6 +507,12 @@ fi
 if [ "$WORKSPACE" == "next" ] || [ "$WORKSPACE" == "all" ]; then
   echo -e "${BLUE}🌐 Next steps for Next.js:${NC}"
   echo "   npm run dev:next"
+  echo ""
+fi
+
+if [ "$WORKSPACE" == "backend" ] || [ "$WORKSPACE" == "all" ]; then
+  echo -e "${BLUE}🔧 Next steps for Backend:${NC}"
+  echo "   npm run dev:backend"
   echo ""
 fi
 
